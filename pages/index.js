@@ -1,48 +1,12 @@
-import {
-  Box,
-  Button,
-  Card,
-  Container,
-  Grid,
-  Heading,
-  IconButton,
-  Text,
-  useColorMode
-} from 'theme-ui'
+import { Box, Button, Card, Container, Grid, Heading, Text } from 'theme-ui'
 import About from '../components/about.mdx'
 import Themes from '../components/themes.mdx'
 import Timeline from '../components/timeline'
 import Sponsors from '../components/sponsors'
-import { Moon } from 'react-feather'
-
-const ThemeSwitcher = () => {
-  const [colorMode, setColorMode] = useColorMode()
-  return (
-    <IconButton
-      onClick={() =>
-        colorMode !== 'dark' ? setColorMode('dark') : setColorMode('')
-      }
-      sx={{
-        color: 'muted',
-        p: 2,
-        width: 'auto',
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        m: 3,
-        transition: '.125s ease-in-out color',
-        ':hover,:focus': { color: 'accent' }
-      }}
-    >
-      <Moon size={24} />
-    </IconButton>
-  )
-}
 
 export default () => (
   <>
     <Box as="header" sx={{ bg: 'sheet', mb: [4, 5] }}>
-      <ThemeSwitcher />
       <Container sx={{ pt: [5, 6], pb: [4, 5] }}>
         <Heading
           as="h1"
