@@ -11,6 +11,7 @@ import {
 } from 'theme-ui'
 import About from '../components/about.mdx'
 import Themes from '../components/themes.mdx'
+import Timeline from '../components/timeline'
 import Sponsors from '../components/sponsors'
 import { Moon } from 'react-feather'
 
@@ -113,13 +114,23 @@ export default () => (
         Themes
       </Heading>
       <Themes />
-      <Heading as="h2" variant="headline">
-        Sponsors
-      </Heading>
-      <Text sx={{ fontSize: 2 }}>
-        Thanks to the generous support from all these technology companies:
-      </Text>
-      <Sponsors />
+      <Grid columns={[null, null, 2]} gap={[3, 4]}>
+        <div>
+          <Heading as="h2" variant="headline">
+            Timeline
+          </Heading>
+          <Timeline />
+        </div>
+        <div>
+          <Heading as="h2" variant="headline">
+            Sponsors
+          </Heading>
+          <Text sx={{ fontSize: 2 }}>
+            Thanks to the generous support from all these technology companies:
+          </Text>
+          <Sponsors />
+        </div>
+      </Grid>
     </Container>
   </>
 )

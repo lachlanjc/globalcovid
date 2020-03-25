@@ -12,7 +12,10 @@ const list = [
 ]
 
 export default () => (
-  <Grid columns={[3, 5, 8]} gap={3} sx={{ mt: 4 }}>
+  <Grid
+    gap={3}
+    sx={{ mt: 4, gridTemplateColumns: 'repeat(auto-fill, minmax(72px, 1fr))' }}
+  >
     {list.map(name => (
       <Link href={`https://${name.toLowerCase()}.com`} title={name} key={name}>
         <Image

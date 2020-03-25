@@ -18,10 +18,12 @@ Additionally, we’re suggesting the below seven themes to help spark your ideas
       listStyle: 'none',
       pl: 0,
       display: 'flex',
-      overflowX: 'auto'
+      overflowX: 'scroll',
+      scrollSnapType: 'x mandatory'
     },
     li: {
       variant: 'cards.primary',
+      scrollSnapAlign: 'start',
       bg: 'sheet',
       boxShadow: 'none',
       my: 0,
@@ -29,9 +31,10 @@ Additionally, we’re suggesting the below seven themes to help spark your ideas
       mr: [3, 4]
     },
     strong: {
-      color: 'primary',
+      variant: 'text.subheadline',
+      color: 'orange',
       display: 'block',
-      variant: 'text.subheadline'
+      mb: 2
     }
   }}>
 
