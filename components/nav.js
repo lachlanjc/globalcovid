@@ -2,13 +2,14 @@ import {
   Box,
   Container,
   IconButton,
-  Text,
+  Image,
   NavLink,
+  Text,
   useColorMode
 } from 'theme-ui'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { Home, ArrowLeft, ExternalLink, Moon } from 'react-feather'
+import { useRouter } from 'next/router'
+import { ArrowLeft, Moon } from 'react-feather'
 
 const linkEffect = {
   borderRadius: 'circle',
@@ -73,21 +74,22 @@ export default ({}) => {
           alignItems: 'center',
           a: {
             fontSize: 1,
-            color: mode === 'dark' ? 'primary' : 'text',
+            color: 'secondary',
             textDecoration: 'none',
             mr: [3, 4]
           }
         }}
       >
-        {back && (
-          <Link href="/" passHref>
-            <NavButton>
-              <Home />
-            </NavButton>
-          </Link>
-        )}
+        <Link href="/" passHref>
+          <NavLink sx={{ lineHeight: 0 }}>
+            <Image src="/icon-accent.svg" width={64} />
+          </NavLink>
+        </Link>
         <Link href="/conduct" passHref>
           <NavLink sx={{ ...linkEffect, px: 2, py: 1, ml: 'auto' }}>
+            <Text as="span" sx={{ display: ['none', 'inline'] }}>
+              Code of{' '}
+            </Text>
             Conduct
           </NavLink>
         </Link>
