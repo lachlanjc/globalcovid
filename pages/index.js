@@ -1,10 +1,12 @@
 import { Box, Button, Card, Container, Grid, Heading, Text } from 'theme-ui'
+import Link from 'next/link'
 import About from '../components/about.mdx'
 import Why from '../components/why.mdx'
 import Themes from '../components/themes.mdx'
 import Timeline from '../components/timeline'
 import Sponsors from '../components/sponsors'
 import Prizes from '../components/prizes.mdx'
+import Requirements from '../components/requirements.mdx'
 
 export default () => (
   <>
@@ -82,6 +84,15 @@ export default () => (
         <div>
           <Heading variant="headline">Prizes</Heading>
           <Prizes />
+        </div>
+        <div>
+          <Heading variant="headline">Requirements</Heading>
+          <Requirements />
+          <Link href="/requirements" passHref>
+            <Button as="a" variant="outline">
+              Read more
+            </Button>
+          </Link>
         </div>
       </Grid>
     </Container>
