@@ -7,6 +7,7 @@ export default () => (
     sx={{
       py: 5,
       bg: 'sunken',
+      color: 'secondary',
       textAlign: 'center',
       fontSize: 1,
       position: 'relative'
