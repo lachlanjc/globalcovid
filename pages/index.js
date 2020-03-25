@@ -1,5 +1,6 @@
 import { Box, Button, Card, Container, Grid, Heading, Text } from 'theme-ui'
 import About from '../components/about.mdx'
+import Why from '../components/why.mdx'
 import Themes from '../components/themes.mdx'
 import Timeline from '../components/timeline'
 import Sponsors from '../components/sponsors'
@@ -53,24 +54,25 @@ export default () => (
       </Container>
     </Box>
     <Container sx={{ py: 4 }}>
-      <Grid columns={[null, null, '1fr 2fr']} gap={[3, 4]}>
-        <Card
-          sx={{
-            bg: 'orange',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center'
-          }}
-        >
-          <Heading variant="headline" sx={{ color: 'text' }}>
-            COVID-19 is an unprecedented global crisis.
-          </Heading>
-        </Card>
-        <Card sx={{ p: { maxWidth: 'copy', fontSize: [1, 2] } }}>
+      <Grid
+        columns={[null, null, 2]}
+        gap={[3, 4]}
+        sx={{
+          h2: { mt: 0 },
+          p: { maxWidth: 'copy', fontSize: [1, 2], ':last-of-type': { mb: 0 } }
+        }}
+      >
+        <Card>
           <Heading variant="headline" sx={{ color: 'blue' }}>
-            We’re running a hackathon for&nbsp;creative solutions.
+            We’re running a hackathon for creative&nbsp;solutions.
           </Heading>
           <About />
+        </Card>
+        <Card>
+          <Heading variant="headline" sx={{ color: 'orange' }}>
+            Why?
+          </Heading>
+          <Why />
         </Card>
       </Grid>
     </Container>
@@ -81,22 +83,16 @@ export default () => (
       <Themes />
       <Grid columns={[null, null, 2]} gap={[3, 4]}>
         <div>
-          <Heading as="h2" variant="headline">
-            Timeline
-          </Heading>
+          <Heading variant="headline">Timeline</Heading>
           <Timeline />
         </div>
         <div>
-          <Heading as="h2" variant="headline">
-            Sponsors
-          </Heading>
+          <Heading variant="headline">Sponsors</Heading>
           <Text sx={{ fontSize: 2 }}>Thanks to generous support from:</Text>
           <Sponsors />
         </div>
         <div>
-          <Heading as="h2" variant="headline">
-            Prizes
-          </Heading>
+          <Heading variant="headline">Prizes</Heading>
           <Prizes />
         </div>
       </Grid>
