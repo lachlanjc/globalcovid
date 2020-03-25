@@ -6,7 +6,6 @@ import { ThemeProvider } from 'theme-ui'
 import theme from '../lib/theme'
 import Meta from '../components/meta'
 import Nav from '../components/nav'
-import Flag from '../components/flag'
 import Footer from '../components/footer'
 
 export default class App extends NextApp {
@@ -16,7 +15,6 @@ export default class App extends NextApp {
       <ThemeProvider theme={theme}>
         <Nav />
         <Meta />
-        <Flag />
         <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
