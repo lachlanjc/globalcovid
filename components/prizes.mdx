@@ -3,19 +3,18 @@ import { Box } from 'theme-ui'
 <Box
   sx={{
     mt: 4,
-    mb: 5,
     ul: {
       listStyle: 'none',
       pl: 0,
-      display: 'flex',
+      display: 'grid',
+      gridGap: 3,
+      gridTemplateColumns: [null, 'repeat(2, 1fr)']
     },
     li: {
       variant: 'cards.primary',
       bg: 'sheet',
       boxShadow: 'none',
       my: 0,
-      minWidth: 256,
-      mr: [3, 4]
     },
     strong: {
       variant: 'text.subheadline',

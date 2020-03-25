@@ -13,10 +13,10 @@ const list = [
 
 export default () => (
   <Grid
-    gap={[3, 4]}
+    gap={4}
     sx={{
       mt: 4,
-      gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
+      gridTemplateColumns: 'repeat(2, 1fr)',
       alignItems: 'center'
     }}
   >
@@ -25,7 +25,7 @@ export default () => (
         href={`https://${name.toLowerCase()}.com`}
         title={name}
         key={name}
-        sx={{ lineHeight: 0, width: '100%' }}
+        sx={{ lineHeight: 0, width: '100%', maxWidth: '100%' }}
       >
         <Image
           src={`/sponsors/${name.toLowerCase()}.svg`}

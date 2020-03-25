@@ -54,7 +54,7 @@ export default () => (
       >
         <Card>
           <Heading variant="headline" sx={{ color: 'blue' }}>
-            We’re running a hackathon for creative&nbsp;solutions.
+            We’re running a hackathon for creative solutions.
           </Heading>
           <About />
         </Card>
