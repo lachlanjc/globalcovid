@@ -8,7 +8,7 @@ export default () => (
       position: 'absolute',
       top: 3,
       left: 0,
-      img: { width: [72, 128] }
+      img: { width: [96, 128] }
     }}
   >
     <Image src="/hackclub-flag.svg" alt="Dinosaur holding Hack Club flag" />

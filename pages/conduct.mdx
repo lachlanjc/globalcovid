@@ -1,16 +1,19 @@
-import { Container, Heading } from 'theme-ui'
+import { Box, Container, Heading } from 'theme-ui'
 
-<Container
-  variant="copy"
-  sx={{
-    pt: [3, 4],
-    pb: [4, null, 5],
-    fontSize: 2,
-    h1: { variant: 'text.title', fontFamily: 'heading', textAlign: 'center' }
-  }}
->
+<Box as="header" variant="variants.header">
 
 # Code of Conduct
+
+</Box>
+
+<Container
+  as="article"
+  variant="copy"
+  sx={{
+    pb: [4, null, 5],
+    fontSize: 2,
+  }}
+>
 
 Our hackathon is dedicated to providing a safe, comfortable and harassment-free experience for everyone, regardless of the following:
 

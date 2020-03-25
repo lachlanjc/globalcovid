@@ -66,7 +66,7 @@ export default () => (
         </Card>
       </Grid>
     </Container>
-    <Container sx={{ py: [4, 5] }}>
+    <Container sx={{ pt: [4, 5], pb: [5, 6] }}>
       <Heading as="h2" variant="headline">
         Themes
       </Heading>
