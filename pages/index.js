@@ -9,11 +9,11 @@ import Prizes from '../components/prizes.mdx'
 export default () => (
   <>
     <Box as="header" sx={{ bg: 'sheet', mb: [4, 5] }}>
-      <Container sx={{ pt: [5, 6], pb: [4, 5] }}>
+      <Container sx={{ py: [4, 5] }}>
         <Heading
           as="h1"
           variant="title"
-          sx={{ color: 'pink', fontSize: [5, 6, 7] }}
+          sx={{ color: 'pink', fontSize: [5, 6, 7], mt: 3 }}
         >
           COVID-19 Global Hackathon
         </Heading>
@@ -27,14 +27,7 @@ export default () => (
         <Button
           as="a"
           href="https://covid-global-hackathon.devpost.com"
-          sx={{
-            borderRadius: 'circle',
-            borderWidth: 3,
-            fontSize: [2, 3],
-            py: [3, 3],
-            px: [4, 4],
-            mr: [3, 4]
-          }}
+          sx={{ fontSize: [2, 3], py: [3, 3], px: [4, 4], mr: [3, 4] }}
         >
           Register
         </Button>
@@ -42,12 +35,7 @@ export default () => (
           as="a"
           href="https://join.slack.com/t/globalcovidhackathon/shared_invite/zt-d25lrhkl-UAKmMq4h_zNzCQhqnNsbfw"
           variant="outline"
-          sx={{
-            borderRadius: 'circle',
-            borderWidth: 3,
-            fontSize: [2, 3],
-            px: [3, 4]
-          }}
+          sx={{ fontSize: [2, 3], px: [3, 4] }}
         >
           Join Slack
         </Button>
