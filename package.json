@@ -1,0 +1,23 @@
+{
+  "name": "globalcovid",
+  "version": "0.0.1",
+  "author": "Lachlan Campbell <lachlan@hackclub.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next"
+  },
+  "dependencies": {
+    "@hackclub/theme": "^0.1.0-alpha.0",
+    "@mdx-js/loader": "^1.5.7",
+    "@next/mdx": "^9.3.1",
+    "lodash": "^4.17.15",
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.3",
+    "theme-ui": "^0.3.1"
+  }
+}

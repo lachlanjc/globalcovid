@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Folsom Web';
+  src: url('/fonts/folsom-black-web.eot');
+  src: url('/fonts/folsom-black-web.eot#iefix') format('embedded-opentype'),
+    url('/fonts/folsom-black-web.woff2') format('woff2'),
+    url('/fonts/folsom-black-web.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Klima Web';
+  src: url('/fonts/klima-regular-web.eot');
+  src: url('/fonts/klima-regular-web.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/klima-regular-web.woff2') format('woff2'),
+    url('/fonts/klima-regular-web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Klima Web';
+  src: url('/fonts/klima-bold-web.eot');
+  src: url('/fonts/klima-bold-web.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/klima-bold-web.woff2') format('woff2'),
+    url('/fonts/klima-bold-web.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
