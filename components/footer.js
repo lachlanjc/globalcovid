@@ -7,7 +7,8 @@ export default () => (
   >
     <Container variant="narrow">
       <Text sx={{ mb: 3 }}>
-        Site by <Link href="https://lachlanjc.me">@lachlanjc</Link> for{' '}
+        Site by <Link href="https://lachlanjc.me">@lachlanjc</Link>
+        {' / '}
         <Link href="https://hackclub.com/">Hack&nbsp;Club</Link>, 2020.
       </Text>
       <Text>

@@ -3,6 +3,7 @@ import About from '../components/about.mdx'
 import Themes from '../components/themes.mdx'
 import Timeline from '../components/timeline'
 import Sponsors from '../components/sponsors'
+import Prizes from '../components/prizes.mdx'
 
 export default () => (
   <>
@@ -66,7 +67,7 @@ export default () => (
           </Heading>
         </Card>
         <Card sx={{ p: { maxWidth: 'copy', fontSize: [1, 2] } }}>
-          <Heading variant="headline" sx={{ color: 'green' }}>
+          <Heading variant="headline" sx={{ color: 'blue' }}>
             We’re running a hackathon for&nbsp;creative solutions.
           </Heading>
           <About />
@@ -89,10 +90,14 @@ export default () => (
           <Heading as="h2" variant="headline">
             Sponsors
           </Heading>
-          <Text sx={{ fontSize: 2 }}>
-            Thanks to the generous support from all these technology companies:
-          </Text>
+          <Text sx={{ fontSize: 2 }}>Thanks to generous support from:</Text>
           <Sponsors />
+        </div>
+        <div>
+          <Heading as="h2" variant="headline">
+            Prizes
+          </Heading>
+          <Prizes />
         </div>
       </Grid>
     </Container>
