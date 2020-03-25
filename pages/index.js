@@ -71,7 +71,7 @@ export default () => (
         Themes
       </Heading>
       <Themes />
-      <Grid columns={[null, null, 2]} gap={[3, 4]}>
+      <Grid columns={[null, null, 2]} gap={[4, 5]}>
         <div>
           <Heading variant="headline">Timeline</Heading>
           <Timeline />
