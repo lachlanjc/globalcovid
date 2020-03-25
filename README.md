@@ -1,5 +1,5 @@
 # COVID-19 Global Hackathon
 
-[**globalcovid.now.sh**](https://globalcovid.now.sh)
+[**globalcovid.netlify.com**](https://globalcovid.netlify.com)
 
 MIT License
