@@ -42,18 +42,18 @@ export default () => (
   <>
     <Box as="header" sx={{ bg: 'sheet', mb: [4, 5] }}>
       <ThemeSwitcher />
-      <Container sx={{ py: [4, 5] }}>
+      <Container sx={{ pt: [5, 6], pb: [4, 5] }}>
         <Heading
           as="h1"
           variant="title"
-          sx={{ color: 'pink', fontSize: [4, 5, 6, 7] }}
+          sx={{ color: 'pink', fontSize: [5, 6, 7] }}
         >
           COVID-19 Global Hackathon
         </Heading>
         <Heading
           as="h2"
           variant="subtitle"
-          sx={{ color: 'muted', my: [3, 4], fontFamily: 'body' }}
+          sx={{ color: 'muted', mt: 3, mb: 4, fontFamily: 'body' }}
         >
           Mar 26–30, 2020
         </Heading>
@@ -64,8 +64,8 @@ export default () => (
             borderRadius: 'circle',
             borderWidth: 3,
             fontSize: [2, 3],
-            py: [2, 3],
-            px: [3, 4],
+            py: [3, 3],
+            px: [4, 4],
             mr: [3, 4]
           }}
         >
@@ -102,7 +102,7 @@ export default () => (
         </Card>
         <Card sx={{ p: { maxWidth: 'copy', fontSize: [1, 2] } }}>
           <Heading variant="headline" sx={{ color: 'green' }}>
-            We’re running a hackathon for creative solutions.
+            We’re running a hackathon for&nbsp;creative solutions.
           </Heading>
           <About />
         </Card>

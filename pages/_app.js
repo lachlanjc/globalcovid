@@ -5,6 +5,7 @@ import '../public/fonts.css'
 import { ThemeProvider } from 'theme-ui'
 import theme from '../lib/theme'
 import Meta from '../components/meta'
+import Flag from '../components/flag'
 import Footer from '../components/footer'
 
 export default class App extends NextApp {
@@ -13,6 +14,7 @@ export default class App extends NextApp {
     return (
       <ThemeProvider theme={theme}>
         <Meta />
+        <Flag />
         <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
