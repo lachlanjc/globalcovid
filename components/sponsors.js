@@ -8,7 +8,9 @@ const list = {
   Slack: true,
   TikTok: true,
   Twitter: false,
-  WeChat: false
+  WeChat: false,
+  AWS: true,
+  Salesforce: false
 }
 
 export default () => {
