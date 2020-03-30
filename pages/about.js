@@ -1,6 +1,6 @@
 import { Box, Button, Card, Container, Grid, Heading, Text } from 'theme-ui'
 import Link from 'next/link'
-import About from '../components/about.mdx'
+import What from '../components/what.mdx'
 import Why from '../components/why.mdx'
 import Themes from '../components/themes.mdx'
 import Timeline from '../components/timeline'
@@ -24,23 +24,8 @@ export default () => (
           variant="subtitle"
           sx={{ color: 'muted', mt: 3, mb: 4, fontFamily: 'body' }}
         >
-          Mar 26–30, 2020. (Projects will be listed here on Monday.)
+          Mar 26–30, 2020.
         </Heading>
-        <Button
-          as="a"
-          href="https://covid-global-hackathon.devpost.com"
-          sx={{ fontSize: [2, 3], py: [3, 3], px: [4, 4], mr: [3, 4] }}
-        >
-          Register
-        </Button>
-        <Button
-          as="a"
-          href="https://join.slack.com/t/globalcovidhackathon/shared_invite/zt-d25lrhkl-UAKmMq4h_zNzCQhqnNsbfw"
-          variant="outline"
-          sx={{ fontSize: [2, 3], px: [3, 4] }}
-        >
-          Join Slack
-        </Button>
       </Container>
     </Box>
     <Container sx={{ py: 4 }}>
@@ -54,13 +39,13 @@ export default () => (
       >
         <Card>
           <Heading variant="headline" sx={{ color: 'blue' }}>
-            We’re running a hackathon for creative solutions.
+            The what
           </Heading>
-          <About />
+          <What />
         </Card>
         <Card>
           <Heading variant="headline" sx={{ color: 'orange' }}>
-            Why?
+            The why
           </Heading>
           <Why />
         </Card>
