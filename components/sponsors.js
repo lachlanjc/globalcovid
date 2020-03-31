@@ -13,14 +13,16 @@ const list = {
   Salesforce: false
 }
 
-export default () => {
+export default ({ wide = false }) => {
   const [colorMode] = useColorMode()
   return (
     <Grid
       gap={4}
       sx={{
         mt: 4,
-        gridTemplateColumns: 'repeat(2, 1fr)',
+        gridTemplateColumns: wide
+          ? 'repeat(auto-fit, minmax(200px, 1fr))'
+          : 'repeat(2, 1fr)',
         alignItems: 'center'
       }}
     >
@@ -36,7 +38,7 @@ export default () => {
               list[name] && colorMode === 'dark' ? '-white' : ''
             }.svg`}
             alt={`${name} logo`}
-            sx={{ height: '100%', maxWidth: '75%', maxHeight: 64 }}
+            sx={{ height: '100%', maxWidth: '75%', maxHeight: wide ? 48 : 64 }}
             loading="lazy"
           />
         </Link>
