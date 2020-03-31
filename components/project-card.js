@@ -1,7 +1,7 @@
 import { Box, Link, Card, Image, Heading, Text } from 'theme-ui'
 import Player from 'react-player'
 
-export default ({ video, image, url, name, desc, creators, devpost }) => (
+export default ({ video, image, url, name, desc, creators, content }) => (
   <Card variant="secondary" sx={{ p: [0, 0], overflow: 'hidden' }}>
     {video ? (
       <Player url={video} width="100%" />
