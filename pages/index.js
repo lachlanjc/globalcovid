@@ -1,17 +1,7 @@
-import {
-  Box,
-  Link,
-  Button,
-  Card,
-  Container,
-  Grid,
-  Image,
-  Heading,
-  Text
-} from 'theme-ui'
-import Player from 'react-player'
+import { Box, Container, Grid, Heading, Text } from 'theme-ui'
 import About from '../components/about.mdx'
 import projects from '../lib/projects-min.json'
+import ProjectCard from '../components/project-card'
 
 export default () => (
   <>
@@ -75,27 +65,7 @@ export default () => (
       </Text>
       <Grid columns={[null, 2]} gap={[3, 4, 5]}>
         {projects.map(project => (
-          <Card
-            variant="secondary"
-            sx={{ p: [0, 0], overflow: 'hidden' }}
-            key={project.name}
-          >
-            {project.video && <Player url={project.video} width="100%" />}
-            {project.image && (
-              <Image src={project.image} sx={{ width: '100%' }} />
-            )}
-            <Box sx={{ p: [2, 3, 4] }}>
-              <Link href={project.url}>
-                <Heading as="h3" variant="headline" sx={{ mt: 0, mb: 2 }}>
-                  {project.name}
-                </Heading>
-              </Link>
-              <Text sx={{ fontSize: [1, 2] }}>{project.desc}</Text>
-              <Text sx={{ mt: 3, color: 'muted', textTransform: 'uppercase' }}>
-                {project.creators}
-              </Text>
-            </Box>
-          </Card>
+          <ProjectCard key={project.name} {...project} />
         ))}
       </Grid>
     </Container>
