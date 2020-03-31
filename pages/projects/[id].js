@@ -1,5 +1,5 @@
 import { Box, Container } from 'theme-ui'
-import ProjectSheet from '../../components/project-Sheet'
+import ProjectSheet from '../../components/project-sheet'
 import { map, find } from 'lodash'
 
 export default ({ project = {} }) => (
