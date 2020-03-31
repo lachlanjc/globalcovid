@@ -10,11 +10,10 @@ import {
   Text
 } from 'theme-ui'
 import Player from 'react-player'
-import fetch from 'isomorphic-unfetch'
-import neatCsv from 'neat-csv'
 import About from '../components/about.mdx'
+import projects from '../lib/projects-min.json'
 
-export default ({ projects = [] }) => (
+export default () => (
   <>
     <Box
       sx={{
@@ -102,19 +101,3 @@ export default ({ projects = [] }) => (
     </Container>
   </>
 )
-
-export const getStaticProps = async () => {
-  const csv = await fetch(
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vT09aaljVDEDqpI4XYFCFzadBwQNilIxsfAaxdKPy6O3_5bQAMAhrbzdCuotDplTGixlZe9EiKedIGS/pub?output=csv'
-  ).then(r => r.text())
-  const json = await neatCsv(csv)
-  const projects = json.map(project => ({
-    name: project['Name'],
-    desc: project['Description'],
-    creators: project['Creators'],
-    url: project['URL'],
-    video: project['Video URL'],
-    image: project['Image URL']
-  }))
-  return { props: { projects } }
-}
