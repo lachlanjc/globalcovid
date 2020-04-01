@@ -8,12 +8,12 @@ Modal.setAppElement('#__next')
 
 const ProjectSheet = dynamic(() => import('./project-sheet'))
 
-export default ({ open: [open, setOpen], ...props }) => [
+export default ({ open, onClose, ...props }) => [
   <Modal
     key="modal"
     isOpen={open}
     contentLabel={props.name}
-    onRequestClose={() => setOpen(false)}
+    onRequestClose={onClose}
     shouldCloseOnOverlayClick
     shouldCloseOnEsc
     shouldFocusAfterRender
@@ -22,7 +22,7 @@ export default ({ open: [open, setOpen], ...props }) => [
       {...props}
       inModal
       actions={
-        <IconButton title="Close modal" onClick={() => setOpen(false)}>
+        <IconButton title="Close modal" onClick={onClose}>
           <X size={32} />
         </IconButton>
       }
