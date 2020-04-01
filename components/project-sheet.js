@@ -12,19 +12,20 @@ import {
 import { ExternalLink } from 'react-feather'
 import Player from 'react-player'
 
-export default ({
-  actions,
-  sx = {},
-  id,
-  video,
-  image,
-  url,
-  name,
-  desc,
-  creators,
-  devpost
-}) => {
-  const { content = '' } = find(projects, { id })
+export default ({ actions, id, project }) => {
+  const {
+    video,
+    image,
+    url,
+    name,
+    desc,
+    creators,
+    devpost,
+    content = ''
+  } = find(projects, { id })
+  const thumbnail =
+    image?.toLowerCase().endsWith('medium.png') ||
+    image?.toLowerCase().endsWith('medium.jpg')
   return (
     <Box
       as="article"
@@ -46,6 +47,7 @@ export default ({
           position: '-webkit-sticky',
           position: 'sticky',
           top: 0,
+          zIndex: 4,
           a: { color: 'white' }
         }}
       >
@@ -74,7 +76,11 @@ export default ({
             <ExternalLink size={32} />
           </IconButton>
         </Box>
-        <Link target="_blank" href={url}>
+        <Link
+          target="_blank"
+          href={url}
+          sx={{ display: 'flex', alignItems: 'center' }}
+        >
           <Heading
             as="h1"
             variant="headline"
@@ -92,24 +98,45 @@ export default ({
       </Box>
       <Box
         as="section"
-        sx={{ bg: 'primary', color: 'white', px: [3, 4, 5], pb: [3, 4] }}
+        sx={{
+          display: thumbnail ? 'grid' : null,
+          gridTemplateColumns: [
+            null,
+            thumbnail ? '96px 1fr' : null,
+            thumbnail ? '166px 1fr' : null
+          ],
+          gridGap: thumbnail && [null, 4],
+          bg: 'primary',
+          color: 'white',
+          px: [3, 4, 5],
+          pb: 4
+        }}
       >
-        <Text as="p" sx={{ maxWidth: 'copyPlus', fontSize: [2, 3] }}>
-          {desc}
-        </Text>
-        <Text
-          variant="caption"
-          as="p"
-          sx={{
-            mt: 3,
-            color: 'inherit',
-            opacity: 0.875,
-            fontSize: [1, 2],
-            textTransform: 'uppercase'
-          }}
-        >
-          {creators}
-        </Text>
+        {thumbnail && (
+          <Image
+            src={image}
+            alt="Project thumbnail"
+            sx={{ display: ['none', 'block'], borderRadius: 'default' }}
+          />
+        )}
+        <div>
+          <Text as="p" sx={{ maxWidth: 'copyPlus', fontSize: [2, 3] }}>
+            {desc}
+          </Text>
+          <Text
+            variant="caption"
+            as="p"
+            sx={{
+              mt: 3,
+              color: 'inherit',
+              opacity: 0.875,
+              fontSize: [1, 2],
+              textTransform: 'uppercase'
+            }}
+          >
+            {creators}
+          </Text>
+        </div>
       </Box>
       <Box
         as="article"
@@ -120,14 +147,18 @@ export default ({
           'p, li': { fontSize: 2, maxWidth: 'copy' },
           'div:first-of-type': {
             borderRadius: 'extra',
-            overflow: 'hidden',
-            height: [null, 512]
+            overflow: 'hidden'
           }
         }}
       >
         <Box sx={{ my: [3, 4], img: [3, 4] }}>
           {video && <Player url={video} width="100%" />}
-          {image && <Image src={image} sx={{ width: '100%' }} />}
+          {image && !thumbnail && (
+            <Image
+              src={image}
+              sx={{ width: '100%', borderRadius: 'default' }}
+            />
+          )}
         </Box>
         <BaseStyles dangerouslySetInnerHTML={{ __html: content }} />
       </Box>
