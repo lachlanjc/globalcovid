@@ -1,26 +1,45 @@
+import { useState } from 'react'
 import { Box, Link, Card, Image, Heading, Text } from 'theme-ui'
-import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 import Player from 'react-player'
+import ProjectModal from './project-modal'
 
-export default ({ id, video, image, url, name, desc, creators }) => (
-  <Card variant="secondary" sx={{ p: [0, 0], overflow: 'hidden' }}>
-    {video ? (
-      <Player url={video} width="100%" />
-    ) : (
-      image && <Image src={image} sx={{ width: '100%' }} />
-    )}
-    <Box sx={{ p: [2, 3, 4] }}>
-      <NextLink href={`/projects/${id}`} prefetch={false} passHref>
-        <Link>
-          <Heading as="h3" variant="headline" sx={{ mt: 0, mb: 2 }}>
+export default props => {
+  const router = useRouter()
+  const [open, setOpen] = useState(false)
+  const { id, video, image, name, desc, creators } = props
+  return (
+    <Card
+      as="section"
+      id={id}
+      variant="secondary"
+      sx={{ p: [0, 0], overflow: 'hidden' }}
+    >
+      {video ? (
+        <Player url={video} width="100%" />
+      ) : (
+        image && <Image src={image} sx={{ width: '100%' }} />
+      )}
+      <Box sx={{ p: [3, 4] }}>
+        <Link
+          href={`/projects/${id}`}
+          onClick={e => {
+            e.preventDefault()
+            setOpen(true)
+            router.push(router.pathname, `/projects/${id}`, { shallow: true })
+          }}
+          sx={{ position: 'sticky', top: 0 }}
+        >
+          <Heading as="h3" variant="headline" sx={{ mt: 0, mb: [2, 3] }}>
             {name}
           </Heading>
         </Link>
-      </NextLink>
-      <Text sx={{ fontSize: [1, 2] }}>{desc}</Text>
-      <Text sx={{ mt: 3, color: 'muted', textTransform: 'uppercase' }}>
-        {creators}
-      </Text>
-    </Box>
-  </Card>
-)
+        <Text sx={{ fontSize: [1, 2] }}>{desc}</Text>
+        <Text sx={{ mt: 3, color: 'muted', textTransform: 'uppercase' }}>
+          {creators}
+        </Text>
+      </Box>
+      {open && <ProjectModal open={[open, setOpen]} {...props} />}
+    </Card>
+  )
+}
