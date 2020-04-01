@@ -96,7 +96,9 @@ export default ({}) => {
           </NavLink>
         </Link>
         <Link href={home ? '/#projects' : '/projects'} passHref>
-          <NavLink sx={{ ...linkEffect, px: 2, py: 1 }}>Projects</NavLink>
+          <NavLink sx={{ ...linkEffect, px: 2, py: 1 }}>
+            {pathname.startsWith('/projects/') ? 'All ' : ''} Projects
+          </NavLink>
         </Link>
         <ColorSwitcher />
       </Container>
