@@ -22,6 +22,7 @@ export default ({ open: [open, setOpen], ...props }) => [
   >
     <ProjectSheet
       {...props}
+      inModal
       actions={
         <IconButton onClick={() => setOpen(false)}>
           <XCircle size={32} />
@@ -43,16 +44,16 @@ export default ({ open: [open, setOpen], ...props }) => [
       100% { transform: translateY(0%); }
     }
     @keyframes modal-wide {
-      0% { transform: translateY(-100%) scale(0); }
-      87.5% { transform: translateY(-2.5%) scaleY(1.025) scaleX(1.0625); }
+      0% { transform: translateY(100%) scale(0); }
+      75% { transform: translateY(-2.5%) scaleY(1.025) scaleX(1.0625); }
       100% { transform: translateY(0%) scale(1); }
     }
     .ReactModal__Content {
       background-color: ${theme.colors.elevated} !important;
+      width: 100% !important;
       max-width: ${theme.sizes.layout}px !important;
       padding: 0 !important;
       border: 0 !important;
-      overflow-y: scroll;
       max-height: 100%;
       border-radius: ${theme.radii.extra}px !important;
       box-shadow: ${theme.shadows.elevated};
@@ -62,14 +63,12 @@ export default ({ open: [open, setOpen], ...props }) => [
       right: auto !important;
       bottom: auto !important;
       will-change: transform;
-      transform-origin: center bottom;
-      perspective: 1000; 
-      backface-visibility: hidden;
+      transform-origin: bottom center !important;
       animation: modal-narrow ease-in 0.5s !important;
     }
     @media screen and (min-width: ${theme.breakpoints[1]}) {
       .ReactModal__Content {
-        animation: modal-wide ease-in 0.375s !important;
+        animation: modal-wide ease-out 0.5s !important;
       }
     }
     @media (prefers-reduced-motion: reduce) {
