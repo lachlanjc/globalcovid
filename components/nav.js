@@ -49,13 +49,13 @@ const BackButton = ({ to = '/', text = 'Back' }) => (
   </Link>
 )
 
-const ColorSwitcher = props => {
+export const ColorSwitcher = props => {
   const [mode, setMode] = useColorMode()
   return (
     <NavButton
       {...props}
       onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
-      sx={{ color: 'secondary', ml: 'auto' }}
+      sx={{ color: 'secondary', ml: 'auto', ...props.sx }}
       title="Reverse color scheme"
     >
       <Moon size={24} />
@@ -64,9 +64,10 @@ const ColorSwitcher = props => {
 }
 
 export default ({}) => {
-  const [mode] = useColorMode()
   const { pathname } = useRouter()
   const home = pathname === '/'
+  if (home) return null
+  const [mode] = useColorMode()
   return (
     <Box as="nav" colorMode={mode} sx={{ bg: 'sheet', py: 3, zIndex: 4 }}>
       <Container

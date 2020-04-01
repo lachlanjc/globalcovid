@@ -3,6 +3,7 @@ import About from '../components/about.mdx'
 import ProjectsGrid from '../components/projects-grid'
 import Sponsors from '../components/sponsors'
 import Marquee from '../components/marquee'
+import { ColorSwitcher } from '../components/nav'
 import { map, uniq, concat, shuffle } from 'lodash'
 
 export default ({ titles = [] }) => (
@@ -13,31 +14,53 @@ export default ({ titles = [] }) => (
         bg: 'primary',
         color: 'white',
         position: 'relative',
-        pt: [4, 5, 6],
-        pb: [3, 4]
+        overflowX: 'hidden'
       }}
     >
-      <Marquee>
-        {titles.map(title => (
-          <span key={title}>{title}</span>
-        ))}
-      </Marquee>
-      <Marquee>
-        {shuffle(titles).map(title => (
-          <span key={title}>{title}</span>
-        ))}
-      </Marquee>
-      <Container>
+      <Box
+        as="aside"
+        aria-hidden
+        sx={{
+          position: 'absolute',
+          top: [2, 3],
+          left: 0,
+          right: 0,
+          transform: ['scale(0.75) rotate(-2deg)', 'rotate(-4deg)'],
+          zIndex: 0
+        }}
+      >
+        <Marquee>
+          {titles.map(title => (
+            <span key={title}>{title}</span>
+          ))}
+        </Marquee>
+        <Marquee>
+          {shuffle(titles).map(title => (
+            <span key={title}>{title}</span>
+          ))}
+        </Marquee>
+      </Box>
+      <ColorSwitcher
+        sx={{
+          color: 'white',
+          position: 'absolute',
+          top: [3, 4],
+          right: [3, 4],
+          width: 'auto',
+          height: 'auto'
+        }}
+      />
+      <Container as="article" sx={{ pt: [5, 6], pb: [3, 4] }}>
         <Text
           as="p"
           variant="subtitle"
           sx={{
             color: 'white',
             opacity: 0.75,
+            mt: [3, 0],
             fontSize: [2, 3],
             fontWeight: 'bold',
-            textTransform: 'uppercase',
-            mt: [null, 3]
+            textTransform: 'uppercase'
           }}
         >
           Mar 26–30, 2020
@@ -47,20 +70,25 @@ export default ({ titles = [] }) => (
           sx={{
             variant: 'text.title',
             fontFamily: 'heading',
-            color: 'white',
-            mt: 3,
+            color: 'inverted',
+            mt: [2, 3],
             mb: 4,
             '> span': {
               display: 'block',
-              fontSize: [3, 5, 6, 7]
+              fontSize: [5, 6, 7]
             },
             kbd: {
+              display: 'inline-block',
               fontFamily: 'inherit',
               WebkitTextStroke: 'currentColor',
-              WebkitTextStrokeWidth: '4px',
+              WebkitTextStrokeWidth: ['2px', '4px'],
               WebkitTextFillColor: theme => theme.colors.primary,
-              transition: 'text-shadow .25s ease-in-out',
-              ':hover': { textShadow: '0 0 12px white' }
+              transition: 'all .125s ease-in-out',
+              ':hover': {
+                color: 'accent',
+                textShadow: theme => `0 0 12px ${theme.colors.accent}`,
+                transform: 'rotate(-4deg) scale(1.025)'
+              }
             }
           }}
         >
@@ -75,22 +103,25 @@ export default ({ titles = [] }) => (
             as="span"
             sx={{
               color: 'accent',
-              span: { mx: [1, null, 2] },
-              transition: 'text-shadow .25s ease-in-out',
+              span: { mx: 2 },
+              transition: 'text-shadow 1s ease-in-out',
               ':hover': {
-                WebkitTextFillColor: theme => theme.colors.white,
-                textShadow: theme => `0 0 9px ${theme.colors.accent}`
-              }
+                textShadow: theme => `0 0 16px ${theme.colors.accent}`
+              },
+              br: { display: [null, 'none'] }
             }}
           >
-            #Build<span>For</span>COVID19.
+            #Build<span>For</span>
+            <br />
+            COVID19.
           </Text>
         </Heading>
       </Container>
     </Box>
-    <Box as="section" sx={{ bg: 'sheet', pt: [3, 4], pb: [3, 4, 5] }}>
+    <Box as="section" sx={{ bg: 'sheet', pt: 4, pb: [4, 5] }}>
       <Container
         sx={{
+          strong: { color: 'primary' },
           '> p': { fontSize: [2, 3], maxWidth: 'copyPlus' }
         }}
       >
