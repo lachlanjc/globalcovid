@@ -17,11 +17,12 @@ export default ({ wide = false }) => {
   const [colorMode] = useColorMode()
   return (
     <Grid
-      gap={4}
       sx={{
-        mt: 4,
+        mt: wide ? [4, 5] : 4,
+        gridRowGap: [3, 4],
+        gridColumnGap: 2,
         gridTemplateColumns: wide
-          ? 'repeat(auto-fit, minmax(200px, 1fr))'
+          ? ['repeat(2, 1fr)', 'repeat(auto-fit, minmax(200px, 1fr))']
           : 'repeat(2, 1fr)',
         alignItems: 'center'
       }}
