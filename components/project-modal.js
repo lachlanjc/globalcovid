@@ -32,8 +32,6 @@ export default ({ open: [open, setOpen], ...props }) => [
   <style key="style">{`
     .ReactModal__Overlay {
       background-color: rgba(0, 0, 0, 0.625) !important;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
       display: flex;
       justify-content: center;
       align-items: end;
@@ -65,11 +63,13 @@ export default ({ open: [open, setOpen], ...props }) => [
       bottom: auto !important;
       will-change: transform;
       transform-origin: center bottom;
+      perspective: 1000; 
+      backface-visibility: hidden;
       animation: modal-narrow ease-in 0.5s !important;
     }
     @media screen and (min-width: ${theme.breakpoints[1]}) {
       .ReactModal__Content {
-        animation: modal-wide ease-in 0.5s !important;
+        animation: modal-wide ease-in 0.375s !important;
       }
     }
     @media (prefers-reduced-motion: reduce) {
