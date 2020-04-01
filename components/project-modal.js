@@ -3,14 +3,12 @@ import { IconButton } from 'theme-ui'
 import { X } from 'react-feather'
 import dynamic from 'next/dynamic'
 import Modal from 'react-modal'
-import ScrollLock from 'react-scrolllock'
 
 Modal.setAppElement('#__next')
 
 const ProjectSheet = dynamic(() => import('./project-sheet'))
 
 export default ({ open: [open, setOpen], ...props }) => [
-  <ScrollLock key="lock" />,
   <Modal
     key="modal"
     isOpen={open}
@@ -52,6 +50,7 @@ export default ({ open: [open, setOpen], ...props }) => [
       background-color: ${theme.colors.elevated} !important;
       width: 100% !important;
       max-width: ${theme.sizes.layout}px !important;
+      overflow: auto !important;
       padding: 0 !important;
       border: 0 !important;
       max-height: 100%;
