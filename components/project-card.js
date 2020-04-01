@@ -30,7 +30,7 @@ export default props => {
           }}
           sx={{ position: 'sticky', top: 0 }}
         >
-          <Heading as="h3" variant="headline" sx={{ mt: 0, mb: [2, 3] }}>
+          <Heading as="h3" variant="headline" sx={{ mt: 0, mb: 3 }}>
             {name}
           </Heading>
         </Link>
