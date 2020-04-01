@@ -17,6 +17,7 @@ export default ({ wide = false }) => {
   const [colorMode] = useColorMode()
   return (
     <Grid
+      as="section"
       sx={{
         mt: wide ? [4, 5] : 4,
         gridRowGap: [3, 4],
