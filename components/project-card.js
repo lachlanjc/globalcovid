@@ -6,8 +6,13 @@ import ProjectModal from './project-modal'
 
 export default props => {
   const router = useRouter()
+  const [initialPath] = useState(router.pathname)
   const [open, setOpen] = useState(false)
   const { id, video, image, name, desc, creators } = props
+  const closeModal = () => {
+    setOpen(false)
+    router.push(router.pathname, initialPath, { shallow: true })
+  }
   return (
     <Card
       as="section"
@@ -39,7 +44,7 @@ export default props => {
           {creators}
         </Text>
       </Box>
-      {open && <ProjectModal open={[open, setOpen]} {...props} />}
+      {open && <ProjectModal open={open} onClose={closeModal} {...props} />}
     </Card>
   )
 }
