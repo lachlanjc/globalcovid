@@ -10,7 +10,7 @@ import {
   Link,
   Text
 } from 'theme-ui'
-import { ExternalLink } from 'react-feather'
+import { GitHub, ExternalLink } from 'react-feather'
 import Player from 'react-player'
 
 export default ({ actions, id, project }) => {
@@ -74,7 +74,11 @@ export default ({ actions, id, project }) => {
         >
           {actions}
           <IconButton as="a" href={url} target="_blank">
-            <ExternalLink size={32} />
+            {url.includes('github.com') ? (
+              <GitHub size={32} />
+            ) : (
+              <ExternalLink size={32} />
+            )}
           </IconButton>
         </Box>
         <Link
