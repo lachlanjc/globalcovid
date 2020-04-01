@@ -3,6 +3,7 @@ import { find } from 'lodash'
 import {
   BaseStyles,
   Box,
+  Button,
   Heading,
   IconButton,
   Image,
@@ -161,6 +162,9 @@ export default ({ actions, id, project }) => {
           )}
         </Box>
         <BaseStyles dangerouslySetInnerHTML={{ __html: content }} />
+        <Button href={devpost} as="a" sx={{ mt: 3, mb: [4, 5] }}>
+          See more on Devpost
+        </Button>
       </Box>
     </Box>
   )
