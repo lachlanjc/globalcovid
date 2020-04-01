@@ -1,4 +1,5 @@
 import { Grid, Text } from 'theme-ui'
+import { Fade } from 'react-reveal'
 import ProjectCard from './project-card'
 import projects from '../lib/projects-min.json'
 
@@ -14,7 +15,9 @@ export default () => [
   </Text>,
   <Grid key="grid" columns={[null, 2]} gap={[4, 5]} sx={{ mx: [-3, 0] }}>
     {projects.map(project => (
-      <ProjectCard key={project.name} {...project} />
+      <Fade key={project.id}>
+        <ProjectCard {...project} />
+      </Fade>
     ))}
   </Grid>
 ]
