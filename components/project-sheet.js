@@ -10,10 +10,10 @@ import {
   Link,
   Text
 } from 'theme-ui'
-import { GitHub, ExternalLink } from 'react-feather'
+import { GitHub, Maximize2, ExternalLink } from 'react-feather'
 import Player from 'react-player'
 
-export default ({ actions, id, project }) => {
+export default ({ actions, id, inModal = false }) => {
   const {
     video,
     image,
@@ -55,31 +55,48 @@ export default ({ actions, id, project }) => {
         <Box
           as="aside"
           sx={{
-            position: 'absolute',
+            position: ['relative', 'absolute'],
+            m: [-3, 0],
+            mb: 0,
             top: 0,
             right: 0,
             display: 'flex',
             flexDirection: ['row-reverse', 'column'],
+            justifyContent: ['flex-start', 'center'],
             'a, button': {
               p: 3,
               color: 'white',
               width: 'auto',
               height: 'auto'
             },
-            'button + a:last-of-type': {
-              display: ['none', 'block'],
+            '* + a': {
               mt: [null, -3]
             }
           }}
         >
           {actions}
-          <IconButton as="a" href={url} target="_blank">
-            {url.includes('github.com') ? (
-              <GitHub size={32} />
-            ) : (
-              <ExternalLink size={32} />
-            )}
-          </IconButton>
+          {inModal ? (
+            <IconButton
+              title="Open on new page"
+              as={Link}
+              href={`/projects/${id}`}
+            >
+              <Maximize2 size={32} />
+            </IconButton>
+          ) : (
+            <IconButton
+              title="Open project website"
+              as="a"
+              href={url}
+              target="_blank"
+            >
+              {url.includes('github.com') ? (
+                <GitHub size={32} />
+              ) : (
+                <ExternalLink size={32} />
+              )}
+            </IconButton>
+          )}
         </Box>
         <Link
           target="_blank"
