@@ -35,6 +35,11 @@ export default ({ open: [open, setOpen], ...props }) => [
       justify-content: center;
       align-items: end;
     }
+    @media (prefers-reduced-transparency: reduce) {
+      .ReactModal__Overlay {
+        background-color: ${theme.colors.dark} !important;
+      }
+    }
 
     @keyframes modal-narrow {
       0% { transform: translateY(-100%); }

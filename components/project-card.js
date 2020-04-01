@@ -13,7 +13,7 @@ export default props => {
       as="section"
       id={id}
       variant="secondary"
-      sx={{ p: [0, 0], overflow: 'hidden' }}
+      sx={{ p: [0, 0], overflow: 'hidden', borderRadius: [0, 'default'] }}
     >
       {video ? (
         <Player url={video} width="100%" />
