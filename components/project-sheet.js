@@ -166,7 +166,12 @@ export default ({ actions, id, project }) => {
           )}
         </Box>
         <BaseStyles dangerouslySetInnerHTML={{ __html: content }} />
-        <Button href={devpost} as="a" sx={{ mt: 3, mb: [4, 5] }}>
+        <Button
+          variant="outline"
+          as="a"
+          href={devpost}
+          sx={{ fontSize: [1, 2], mt: 3, mb: [4, 5] }}
+        >
           See more on Devpost
         </Button>
       </Box>
