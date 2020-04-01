@@ -68,7 +68,7 @@ export default ({}) => {
   const { pathname } = useRouter()
   const home = pathname === '/'
   return (
-    <Box as="nav" colorMode={mode} sx={{ bg: 'sheet', py: 3 }} key="nav">
+    <Box as="nav" colorMode={mode} sx={{ bg: 'sheet', py: 3, zIndex: 4 }}>
       <Container
         sx={{
           display: 'flex',
