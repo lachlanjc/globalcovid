@@ -13,7 +13,7 @@ export default () => [
     judges have spent the past week considering the viability, potential and
     scalability of submissions to land on the following highlighted projects.
   </Text>,
-  <Grid key="grid" columns={[null, 2]} gap={[4, 5]} sx={{ mx: [-3, 0] }}>
+  <Grid key="grid" columns={[null, 2]} gap={[4, null, 5]} sx={{ mx: [-3, 0] }}>
     {projects.map(project => (
       <Fade key={project.id}>
         <ProjectCard {...project} />
