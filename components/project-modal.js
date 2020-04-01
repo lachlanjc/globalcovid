@@ -1,6 +1,6 @@
 import theme from '../lib/theme'
 import { IconButton } from 'theme-ui'
-import { XCircle } from 'react-feather'
+import { X } from 'react-feather'
 import dynamic from 'next/dynamic'
 import Modal from 'react-modal'
 import ScrollLock from 'react-scrolllock'
@@ -24,8 +24,8 @@ export default ({ open: [open, setOpen], ...props }) => [
       {...props}
       inModal
       actions={
-        <IconButton onClick={() => setOpen(false)}>
-          <XCircle size={32} />
+        <IconButton title="Close modal" onClick={() => setOpen(false)}>
+          <X size={32} />
         </IconButton>
       }
     />
