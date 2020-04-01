@@ -12,19 +12,25 @@ export default () => (
   <>
     <Box as="header" sx={{ bg: 'sheet', mb: [4, 5] }}>
       <Container sx={{ py: [4, 5] }}>
+        <Text
+          as="p"
+          variant="subtitle"
+          sx={{
+            color: 'muted',
+            fontSize: [2, 3],
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            mt: 3
+          }}
+        >
+          Mar 26–30, 2020
+        </Text>
         <Heading
           as="h1"
           variant="title"
           sx={{ color: 'pink', fontSize: [5, 6, 7], mt: 3 }}
         >
           COVID-19 Global Hackathon
-        </Heading>
-        <Heading
-          as="h2"
-          variant="subtitle"
-          sx={{ color: 'muted', mt: 3, mb: 4, fontFamily: 'body' }}
-        >
-          Mar 26–30, 2020.
         </Heading>
       </Container>
     </Box>
