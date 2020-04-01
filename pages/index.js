@@ -12,7 +12,11 @@ export default () => (
         pt: 3,
         pb: [4, 5],
         mb: [4, 5],
-        'h1 ~ p': { maxWidth: 'copy', fontSize: 2, ':last-of-type': { mb: 0 } }
+        'h1 ~ p': {
+          maxWidth: 'copyPlus',
+          fontSize: [2, 3],
+          ':last-of-type': { mb: 0 }
+        }
       }}
     >
       <Container>
@@ -24,7 +28,7 @@ export default () => (
             fontSize: [2, 3],
             fontWeight: 'bold',
             textTransform: 'uppercase',
-            mt: 3
+            mt: [null, 3]
           }}
         >
           Mar 26–30, 2020
@@ -34,12 +38,12 @@ export default () => (
           sx={{
             variant: 'text.title',
             fontFamily: 'heading',
-            mt: 0,
+            mt: 3,
             mb: 4,
             '> span': {
               display: 'block',
               color: 'primary',
-              fontSize: [2, 4, 5, 7],
+              fontSize: [3, 5, 6],
               mb: 2,
               ':before': { content: '"#"', color: 'accent' },
               span: { mx: 1 }
@@ -47,7 +51,7 @@ export default () => (
             strong: {
               color: 'blue',
               maxWidth: 'copyPlus',
-              fontSize: [5, 6]
+              fontSize: [4, 5, 6]
             }
           }}
         >
@@ -59,7 +63,7 @@ export default () => (
         <About />
       </Container>
     </Box>
-    <Container as="article" sx={{ py: [3, 4], mb: [5, 6] }}>
+    <Container id="projects" as="article" sx={{ py: [3, 4], mb: [5, 6] }}>
       <Heading sx={{ variant: 'text.title', fontSize: [4, 5], m: 0 }}>
         Highlighted projects
       </Heading>
