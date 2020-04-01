@@ -53,7 +53,7 @@ export default ({ open: [open, setOpen], ...props }) => [
       overflow: auto !important;
       padding: 0 !important;
       border: 0 !important;
-      max-height: 100%;
+      max-height: calc(100vh - ${theme.space[4]}px) !important;
       border-radius: ${theme.radii.extra}px !important;
       box-shadow: ${theme.shadows.elevated};
       margin-top: ${theme.space[4]}px !important;
