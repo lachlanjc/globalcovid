@@ -26,7 +26,6 @@
     "react-modal": "^3.11.2",
     "react-player": "^1.15.3",
     "react-reveal": "^1.2.2",
-    "react-scrolllock": "^5.0.1",
     "theme-ui": "^0.3.1",
     "write-json-file": "^4.3.0"
   }
