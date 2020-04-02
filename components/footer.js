@@ -15,7 +15,7 @@ export default () => (
     }}
   >
     <Flag />
-    <Container variant="narrow" sx={{ p: { mt: 3 } }}>
+    <Container variant="narrow" sx={{ p: { mt: 3 }, a: { color: 'primary' } }}>
       <Heading
         variant="headline"
         sx={{ color: 'secondary', fontSize: [3, 4], m: 0 }}
