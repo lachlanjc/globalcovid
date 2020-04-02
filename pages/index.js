@@ -1,7 +1,6 @@
 import { Box, Container, Heading, Text } from 'theme-ui'
 import About from '../components/about.mdx'
 import ProjectsGrid from '../components/projects-grid'
-import Sponsors from '../components/sponsors'
 import Marquee from '../components/marquee'
 import { ColorSwitcher } from '../components/nav'
 import { map, uniq, concat, shuffle } from 'lodash'
@@ -118,7 +117,7 @@ export default ({ titles = [] }) => (
         </Heading>
       </Container>
     </Box>
-    <Box as="section" sx={{ bg: 'sheet', pt: 4, pb: [4, 5] }}>
+    <Box as="section" sx={{ bg: 'sheet', py: 4 }}>
       <Container
         sx={{
           strong: { color: 'primary' },
@@ -126,7 +125,6 @@ export default ({ titles = [] }) => (
         }}
       >
         <About />
-        <Sponsors wide />
       </Container>
     </Box>
     <Container
