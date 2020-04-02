@@ -183,14 +183,16 @@ export default ({ actions, id, inModal = false }) => {
           )}
         </Box>
         <BaseStyles dangerouslySetInnerHTML={{ __html: content }} />
-        <Button
-          variant="outline"
-          as="a"
-          href={devpost}
-          sx={{ fontSize: [1, 2], mt: 3, mb: [4, 5] }}
-        >
-          See more on Devpost
-        </Button>
+        {devpost && (
+          <Button
+            variant="outline"
+            as="a"
+            href={devpost}
+            sx={{ fontSize: [1, 2], mt: 3, mb: [4, 5] }}
+          >
+            See more on Devpost
+          </Button>
+        )}
       </Box>
     </Box>
   )
