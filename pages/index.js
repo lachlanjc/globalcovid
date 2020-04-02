@@ -1,4 +1,5 @@
 import { Box, Button, Container, Heading, Text } from 'theme-ui'
+import Link from 'next/link'
 import About from '../components/about.mdx'
 import ProjectsGrid from '../components/projects-grid'
 import Marquee from '../components/marquee'
@@ -67,14 +68,15 @@ export default ({ titles = [] }) => (
         <Heading
           as="h1"
           sx={{
-            variant: 'text.title',
+            letterSpacing: 'title',
+            lineHeight: 'title',
             fontFamily: 'heading',
             color: 'inverted',
             mt: [2, 3],
             mb: 4,
             '> span': {
               display: 'block',
-              fontSize: [5, 6, 7]
+              fontSize: [5, null, 6, 7]
             },
             kbd: {
               display: 'inline-block',
@@ -117,21 +119,19 @@ export default ({ titles = [] }) => (
         </Heading>
       </Container>
     </Box>
-    <Box as="section" sx={{ bg: 'sheet', py: 4 }}>
+    <Box as="section" sx={{ bg: 'sheet', py: [4, 5] }}>
       <Container
         sx={{
           strong: { color: 'primary' },
-          '> p': { fontSize: [2, 3], maxWidth: 'copyPlus' }
+          '> p': { fontSize: [2, 3], maxWidth: 'copyPlus', mt: 0 }
         }}
       >
         <About />
-        <Button
-          variant="outline"
-          as="a"
-          sx={{ fontSize: [1, 2], mt: 3, mb: [4, 5] }}
-        >
-          View judges →
-        </Button>
+        <Link href="/judges" passHref>
+          <Button variant="outline" as="a" sx={{ fontSize: [1, 2], mt: 3 }}>
+            View judges →
+          </Button>
+        </Link>
       </Container>
     </Box>
     <Container
