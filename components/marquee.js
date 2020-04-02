@@ -18,8 +18,8 @@ export default props => (
       overflow: 'hidden',
       textTransform: 'uppercase',
       letterSpacing: '.04em',
-      animation: `${forwards} linear infinite`,
-      animationDuration: ['48s', '32s', '16s'],
+      animation: `${forwards} linear infinite alternate`,
+      animationDuration: ['64s', '48s', '32s'],
       width: 'fit-content',
       ':last-of-type': {
         animationName: backwards
