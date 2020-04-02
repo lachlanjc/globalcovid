@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text } from 'theme-ui'
+import { Box, Button, Container, Heading, Text } from 'theme-ui'
 import About from '../components/about.mdx'
 import ProjectsGrid from '../components/projects-grid'
 import Marquee from '../components/marquee'
@@ -125,6 +125,13 @@ export default ({ titles = [] }) => (
         }}
       >
         <About />
+        <Button
+          variant="outline"
+          as="a"
+          sx={{ fontSize: [1, 2], mt: 3, mb: [4, 5] }}
+        >
+          View judges →
+        </Button>
       </Container>
     </Box>
     <Container
