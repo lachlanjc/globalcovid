@@ -1,5 +1,5 @@
-import { Container, Heading, Text } from 'theme-ui'
-import About from '../components/about'
+import { Box, Container, Heading, Text } from 'theme-ui'
+import About from '../components/about.mdx'
 import Banner from '../components/banner'
 import CTA from '../components/cta'
 import ProjectsCopy from '../components/projects.mdx'
@@ -11,7 +11,17 @@ import { map, uniq, concat, shuffle, take } from 'lodash'
 export default ({ titles = [] }) => (
   <>
     <Banner titles={titles} />
-    <About />
+    <Box as="section" sx={{ bg: 'sheet', py: [4, 5] }}>
+      <Container
+        sx={{
+          position: 'relative',
+          strong: { color: 'accent' },
+          '> p': { fontSize: [2, 3], maxWidth: 'copyPlus', mt: 0 }
+        }}
+      >
+        <About />
+      </Container>
+    </Box>
     <Container
       id="projects"
       as="article"
