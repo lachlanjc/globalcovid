@@ -85,7 +85,7 @@ export default ({ actions, id, inModal = false }) => {
               as={Link}
               href={`/projects/${id}`}
             >
-              <Maximize2 size={32} />
+              <Maximize2 size={30} />
             </IconButton>
           ) : (
             <IconButton
@@ -95,9 +95,9 @@ export default ({ actions, id, inModal = false }) => {
               target="_blank"
             >
               {url.includes('github.com') ? (
-                <GitHub size={32} />
+                <GitHub size={30} />
               ) : (
-                <ExternalLink size={32} />
+                <ExternalLink size={30} />
               )}
             </IconButton>
           )}
