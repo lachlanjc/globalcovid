@@ -43,7 +43,6 @@ export const getStaticProps = async () => {
     .join(', ')
     .split(', ')
   titles = uniq(titles)
-  titles = concat(titles, map(list, 'name'))
   titles = take(shuffle(titles), 64)
   return { props: { titles } }
 }
