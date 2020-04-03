@@ -1,4 +1,4 @@
 .now
 .next
 node_modules
-lib/*.json
+lib/projects-*.json
