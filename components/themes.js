@@ -38,14 +38,32 @@ export default ({ showAll = true, minimal = false, ...props }) => {
         <Link href={`/themes/${kebabCase(name)}`} passHref key={name}>
           <Card
             as="a"
-            variant="nav"
             sx={{
               bg: color,
               color: 'white',
               boxShadow: theme =>
                 active === kebabCase(name)
                   ? `0 0 0 3px ${theme.colors.sheet}, 0 0 0 6px ${color}`
-                  : 'card'
+                  : 'card',
+              p: 3,
+              borderRadius: 'extra',
+              textDecoration: 'none',
+              position: 'relative',
+              overflow: 'hidden',
+              fontSize: 2,
+              fontWeight: 'bold',
+              lineHeight: 'title',
+              WebkitTapHighlightColor: 'transparent',
+              transition:
+                'transform .25s ease-in-out, box-shadow .125s ease-in-out',
+              ':hover,:focus': {
+                transform: 'scale(1.25) rotate(-8deg)',
+                zIndex: 2,
+                boxShadow: 'elevated'
+              },
+              '@media (prefers-reduced-motion: reduce)': {
+                transform: 'none !important'
+              }
             }}
           >
             {name}

@@ -50,7 +50,8 @@ export default ({ titles = [] }) => (
           top: [3, 4],
           right: [3, 4],
           width: 'auto',
-          height: 'auto'
+          height: 'auto',
+          ':focus,:hover': { color: 'accent' }
         }}
       />
       <Container as="article" sx={{ pt: [5, 6], pb: [3, 4] }}>
@@ -146,6 +147,9 @@ export default ({ titles = [] }) => (
             transformOrigin: 'right bottom',
             ':hover': {
               transform: 'scale(2) rotate(-25deg)'
+            },
+            '@media (prefers-reduced-motion: reduce)': {
+              transform: 'none !important'
             }
           }}
         />
