@@ -177,11 +177,13 @@ export default ({ actions, id, inModal = false }) => {
           pt: [4],
           pb: [3, 4, 5],
           px: [3, 4, 5],
+          '* a': { color: theme.color },
           'p, li': { fontSize: 2, maxWidth: 'copy' },
           'div:first-of-type': {
             borderRadius: 'extra',
             overflow: 'hidden'
-          }
+          },
+          'h4,h5,h6': { fontSize: 2 }
         }}
       >
         <Box sx={{ my: [3, 4], img: [3, 4] }}>
