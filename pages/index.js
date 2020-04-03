@@ -2,7 +2,9 @@ import { Box, Button, Container, Heading, Flex, Text } from 'theme-ui'
 import Link from 'next/link'
 import About from '../components/about.mdx'
 import ProjectsCopy from '../components/projects.mdx'
+import Themes from '../components/themes'
 import ProjectsGrid from '../components/projects-grid'
+import projects from '../lib/projects-min.json'
 import Marquee from '../components/marquee'
 import { ColorSwitcher } from '../components/nav'
 import { map, uniq, concat, shuffle } from 'lodash'
@@ -145,6 +147,7 @@ export default ({ titles = [] }) => (
       >
         <ProjectsCopy />
       </Text>
+      <Themes />
       <Flex
         sx={{
           alignItems: 'center',
@@ -172,19 +175,19 @@ export default ({ titles = [] }) => (
           </Button>
         </Link>
       </Flex>
-      <ProjectsGrid />
+      <ProjectsGrid projects={projects} />
     </Container>
   </>
 )
 
 export const getStaticProps = async () => {
   const loadJSON = require('load-json-file')
-  const projects = await loadJSON('./lib/projects-content.json')
-  let titles = map(projects, 'creators')
+  const list = await loadJSON('./lib/projects-content.json')
+  let titles = map(list, 'creators')
     .join(', ')
     .split(', ')
   titles = uniq(titles)
-  titles = concat(titles, map(projects, 'name'))
+  titles = concat(titles, map(list, 'name'))
   titles = shuffle(titles)
   return { props: { titles } }
 }
