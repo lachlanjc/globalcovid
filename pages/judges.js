@@ -8,10 +8,7 @@ export default ({ judges }) => (
         <h1>Judges</h1>
         <p>
           We’d like to thank all of our judges from the health, science and
-          technology sectors for contributing their time and expertise. On
-          behalf of the organizing team from Slow Ventures, and our supporting
-          tech ecosystem companies and partners, we’re so grateful to the
-          following organizations:
+          technology sectors for contributing their time and expertise.
         </p>
       </Container>
     </Box>
