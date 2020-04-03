@@ -4,8 +4,8 @@ import theme from '../lib/theme'
 export default ({
   title = 'COVID-19 Global Hackathon',
   description = '',
-  image = 'https://globalcovid.netlify.com/card.png',
-  url = 'https://globalcovid.netlify.com/'
+  image = 'https://globalcovid.hackclub.com/card.png',
+  url = 'https://globalcovid.hackclub.com/'
 }) => (
   <Head>
     <title>{title}</title>
