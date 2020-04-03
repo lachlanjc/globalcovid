@@ -29,7 +29,7 @@ export default ({ primary = [], secondary = {}, sx = {} }) => {
           {primary[1]} →
         </Button>
       </Link>
-      <Link href={secondary[0]} passHref>
+      <Link href={secondary[0]} prefetch={false} passHref>
         <Button variant="outline" as="a" sx={{ color: colors[1], mb: 2 }}>
           {secondary[1]} →
         </Button>

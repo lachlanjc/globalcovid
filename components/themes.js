@@ -50,7 +50,7 @@ export default ({ showAll = true, minimal = false, ...props }) => {
       {...props}
     >
       {showAll && (
-        <Link href="/projects" passHref>
+        <Link href="/projects" passHref prefetch={false}>
           <Card
             as="a"
             variant="nav"
@@ -61,7 +61,12 @@ export default ({ showAll = true, minimal = false, ...props }) => {
         </Link>
       )}
       {themes.map(({ name, color }) => (
-        <Link href={`/themes/${kebabCase(name)}`} passHref key={name}>
+        <Link
+          href={`/themes/${kebabCase(name)}`}
+          passHref
+          prefetch={false}
+          key={name}
+        >
           <Card
             as="a"
             sx={{
