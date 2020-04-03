@@ -6,7 +6,7 @@ import ProjectsCopy from '../components/projects.mdx'
 import Themes from '../components/themes'
 import ProjectsGrid from '../components/projects-grid'
 import projects from '../lib/projects-min.json'
-import { map, uniq, concat, shuffle } from 'lodash'
+import { map, uniq, concat, shuffle, take } from 'lodash'
 
 export default ({ titles = [] }) => (
   <>
@@ -44,6 +44,6 @@ export const getStaticProps = async () => {
     .split(', ')
   titles = uniq(titles)
   titles = concat(titles, map(list, 'name'))
-  titles = shuffle(titles)
+  titles = take(shuffle(titles), 64)
   return { props: { titles } }
 }
