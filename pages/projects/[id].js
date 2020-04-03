@@ -20,7 +20,7 @@ export default ({ project = {} }) => (
       <Card variant="primary" sx={{ mt: [4, 5], py: [3, 0] }}>
         <Heading
           variant="headline"
-          sx={{ mt: [3, 4], span: { color: 'accent' } }}
+          sx={{ mt: [3, 4], color: 'text', span: { color: 'accent' } }}
         >
           A project from <span>#BuildforCOVID19</span>
         </Heading>

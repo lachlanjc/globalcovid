@@ -16,7 +16,7 @@ export default ({ showAll = true, minimal = false, ...props }) => {
     overflow: 'hidden',
     position: 'relative',
     color: 'white',
-    px: 3,
+    p: [2, 3],
     py: minimal ? 3 : [3, 4],
     textAlign: 'left',
     textDecoration: 'none',
@@ -53,7 +53,12 @@ export default ({ showAll = true, minimal = false, ...props }) => {
         <Link href="/projects" passHref prefetch={false}>
           <Card
             as="a"
-            sx={{ ...card, bg: 'sunken', color: 'text', boxShadow: 'card' }}
+            sx={{
+              ...card,
+              bg: colorMode === 'dark' ? 'muted' : 'sunken',
+              color: 'text',
+              boxShadow: 'card'
+            }}
           >
             All Themes
           </Card>
