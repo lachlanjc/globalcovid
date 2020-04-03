@@ -12,8 +12,8 @@ export default ({ showAll = true, minimal = false, ...props }) => {
       key="heading"
       as="h2"
       id="themes"
-      variant="subhead"
-      sx={{ color: 'muted', mb: 3 }}
+      variant={minimal ? 'subheadline' : 'headline'}
+      sx={{ color: minimal ? 'muted' : 'secondary' }}
     >
       Explore by theme
     </Heading>,
@@ -21,7 +21,10 @@ export default ({ showAll = true, minimal = false, ...props }) => {
       key="grid"
       columns={[2, 4]}
       gap={3}
-      sx={{ pb: [3, 4], a: { textAlign: 'left', py: minimal ? 3 : [3, 4] } }}
+      sx={{
+        pb: minimal ? [3, 4] : [4, 5],
+        a: { textAlign: 'left', py: minimal ? 3 : [3, 4] }
+      }}
       {...props}
     >
       {showAll && (
