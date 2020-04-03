@@ -4,12 +4,6 @@ import Link from 'next/link'
 import themes from '../lib/themes'
 import { kebabCase } from 'lodash'
 
-themes.push({
-  name: 'Hack Club',
-  id: 'hack-club',
-  color: '#ec3750'
-})
-
 export default ({ showAll = false, minimal = false, ...props }) => {
   const { pathname, query } = useRouter()
   const active = pathname.startsWith('/themes/') ? query.id : false
