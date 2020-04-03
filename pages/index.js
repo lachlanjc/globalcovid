@@ -1,4 +1,4 @@
-import { Box, Button, Container, Heading, Text } from 'theme-ui'
+import { Box, Button, Container, Heading, Flex, Text } from 'theme-ui'
 import Link from 'next/link'
 import About from '../components/about.mdx'
 import ProjectsGrid from '../components/projects-grid'
@@ -129,11 +129,6 @@ export default ({ titles = [] }) => (
         }}
       >
         <About />
-        <Link href="/judges" passHref>
-          <Button variant="outline" as="a" sx={{ fontSize: [1, 2], mt: 3 }}>
-            View judges →
-          </Button>
-        </Link>
       </Container>
     </Box>
     <Container
@@ -141,10 +136,39 @@ export default ({ titles = [] }) => (
       as="article"
       sx={{ py: [3, 4], mt: [3, 4], mb: [5, 6] }}
     >
-      <Heading sx={{ variant: 'text.title', fontSize: [4, 5], m: 0 }}>
+      <Heading sx={{ variant: 'text.title', fontSize: [4, 5] }}>
         Highlighted projects
       </Heading>
-      <ProjectsGrid />
+      <ProjectsGrid>
+        <Flex
+          sx={{
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            mt: [-3, -4],
+            mb: [4, 5]
+          }}
+        >
+          <Link href="/projects" passHref>
+            <Button
+              as="a"
+              sx={{
+                fontSize: 2,
+                border: '3px solid',
+                borderColor: 'primary',
+                mr: 3,
+                mb: 2
+              }}
+            >
+              See all projects →
+            </Button>
+          </Link>
+          <Link href="/judges" passHref>
+            <Button variant="outline" as="a" sx={{ mb: 2 }}>
+              Meet the judges →
+            </Button>
+          </Link>
+        </Flex>
+      </ProjectsGrid>
     </Container>
   </>
 )
