@@ -1,6 +1,7 @@
 import { Box, Button, Container, Heading, Flex, Text } from 'theme-ui'
 import Link from 'next/link'
 import About from '../components/about.mdx'
+import ProjectsCopy from '../components/projects.mdx'
 import ProjectsGrid from '../components/projects-grid'
 import Marquee from '../components/marquee'
 import { ColorSwitcher } from '../components/nav'
@@ -139,36 +140,39 @@ export default ({ titles = [] }) => (
       <Heading sx={{ variant: 'text.title', fontSize: [4, 5] }}>
         Highlighted projects
       </Heading>
-      <ProjectsGrid>
-        <Flex
-          sx={{
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            mt: [-3, -4],
-            mb: [4, 5]
-          }}
-        >
-          <Link href="/projects" passHref>
-            <Button
-              as="a"
-              sx={{
-                fontSize: 2,
-                border: '3px solid',
-                borderColor: 'primary',
-                mr: 3,
-                mb: 2
-              }}
-            >
-              See all projects →
-            </Button>
-          </Link>
-          <Link href="/judges" passHref>
-            <Button variant="outline" as="a" sx={{ mb: 2 }}>
-              Meet the judges →
-            </Button>
-          </Link>
-        </Flex>
-      </ProjectsGrid>
+      <Text
+        sx={{ fontSize: [2, 3], mt: [3, 4], mb: [2, 3], maxWidth: 'copyPlus' }}
+      >
+        <ProjectsCopy />
+      </Text>
+      <Flex
+        sx={{
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          mb: [4, 5]
+        }}
+      >
+        <Link href="/projects" passHref>
+          <Button
+            as="a"
+            sx={{
+              fontSize: 2,
+              border: '3px solid',
+              borderColor: 'primary',
+              mr: 3,
+              mb: 2
+            }}
+          >
+            See all projects →
+          </Button>
+        </Link>
+        <Link href="/judges" passHref>
+          <Button variant="outline" as="a" sx={{ mb: 2 }}>
+            Meet the judges →
+          </Button>
+        </Link>
+      </Flex>
+      <ProjectsGrid />
     </Container>
   </>
 )
