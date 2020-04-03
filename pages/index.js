@@ -1,4 +1,4 @@
-import { Box, Button, Container, Heading, Flex, Text } from 'theme-ui'
+import { Box, Button, Container, Flex, Heading, Image, Text } from 'theme-ui'
 import Link from 'next/link'
 import About from '../components/about.mdx'
 import ProjectsCopy from '../components/projects.mdx'
@@ -127,11 +127,28 @@ export default ({ titles = [] }) => (
     <Box as="section" sx={{ bg: 'sheet', py: [4, 5] }}>
       <Container
         sx={{
-          strong: { color: 'primary' },
+          position: 'relative',
+          strong: { color: 'accent' },
           '> p': { fontSize: [2, 3], maxWidth: 'copyPlus', mt: 0 }
         }}
       >
         <About />
+        <Image
+          src="/icon-flat.svg"
+          aria-hidden
+          alt="Logo"
+          sx={{
+            display: ['none', null, 'block'],
+            position: 'absolute',
+            bottom: 0,
+            right: 3,
+            transition: 'transform 0.75s ease-in-out',
+            transformOrigin: 'right bottom',
+            ':hover': {
+              transform: 'scale(2) rotate(-25deg)'
+            }
+          }}
+        />
       </Container>
     </Box>
     <Container
@@ -147,7 +164,6 @@ export default ({ titles = [] }) => (
       >
         <ProjectsCopy />
       </Text>
-      <Themes />
       <Flex
         sx={{
           alignItems: 'center',
@@ -176,6 +192,7 @@ export default ({ titles = [] }) => (
           </Button>
         </Link>
       </Flex>
+      <Themes />
       <ProjectsGrid projects={projects} />
     </Container>
   </>
