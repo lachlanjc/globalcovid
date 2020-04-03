@@ -44,6 +44,6 @@ export const getStaticProps = async () => {
     'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQnikhtzfTdRrKKxc2ZEBLRFnydNj4BWfV8lQCNq9DwPFPar1c1tBjqUqaG8pPrMiEZnoolcahbCkZ/pub?output=csv'
   )
     .then(r => r.text())
-    .then(t => t.split('\n'))
+    .then(t => t.split('\n').map(j => j.replace(/"/g, '')))
   return { props: { judges } }
 }
