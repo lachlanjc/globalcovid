@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import { Box, Link, Card, Image, Heading, Text } from 'theme-ui'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import Player from 'react-player'
 import ProjectModal from './project-modal'
 import { getThemeColor } from '../lib/themes'
 
 export default props => {
-  const router = useRouter()
-  const [initialPath] = useState(router.pathname)
+  // const router = useRouter()
+  // const [initialPath] = useState(router.pathname)
   const [open, setOpen] = useState(false)
   const { id, theme, video, image, name, desc, creators } = props
   const closeModal = () => {
     setOpen(false)
-    router.push(router.pathname, initialPath, { shallow: true })
+    // router.push(router.pathname, initialPath, { shallow: true })
   }
   return (
     <Card
@@ -32,7 +32,7 @@ export default props => {
           onClick={e => {
             e.preventDefault()
             setOpen(true)
-            router.push(router.pathname, `/projects/${id}`, { shallow: true })
+            // router.push(router.pathname, `/projects/${id}`, { shallow: true })
           }}
           sx={{ position: 'sticky', top: 0, color: getThemeColor(theme) }}
         >
