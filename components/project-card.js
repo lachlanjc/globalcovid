@@ -9,7 +9,7 @@ export default props => {
   // const router = useRouter()
   // const [initialPath] = useState(router.pathname)
   const [open, setOpen] = useState(false)
-  const { id, theme, video, country, name, desc } = props
+  const { id, theme, country, name, desc } = props
   const closeModal = () => {
     setOpen(false)
     // router.push(router.pathname, initialPath, { shallow: true })
