@@ -96,7 +96,11 @@ export default ({}) => {
             Recap
           </NavLink>
         </Link>
-        <Link href={home ? '/#projects' : '/projects'} passHref>
+        <Link
+          href={home ? '/#projects' : '/projects'}
+          prefetch={false}
+          passHref
+        >
           <NavLink sx={{ ...linkEffect, px: 2, py: 1 }}>Projects</NavLink>
         </Link>
         <Link href="/judges" passHref>
