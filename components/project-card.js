@@ -3,12 +3,13 @@ import { Box, Link, Card, Image, Heading, Text } from 'theme-ui'
 import { useRouter } from 'next/router'
 import Player from 'react-player'
 import ProjectModal from './project-modal'
+import { getThemeColor } from '../lib/themes'
 
 export default props => {
   const router = useRouter()
   const [initialPath] = useState(router.pathname)
   const [open, setOpen] = useState(false)
-  const { id, video, image, name, desc, creators } = props
+  const { id, theme, video, image, name, desc, creators } = props
   const closeModal = () => {
     setOpen(false)
     router.push(router.pathname, initialPath, { shallow: true })
@@ -33,9 +34,13 @@ export default props => {
             setOpen(true)
             router.push(router.pathname, `/projects/${id}`, { shallow: true })
           }}
-          sx={{ position: 'sticky', top: 0 }}
+          sx={{ position: 'sticky', top: 0, color: getThemeColor(theme) }}
         >
-          <Heading as="h3" variant="headline" sx={{ mt: 0, mb: 3 }}>
+          <Heading
+            as="h3"
+            variant="headline"
+            sx={{ color: 'inherit', mt: 0, mb: 3 }}
+          >
             {name}
           </Heading>
         </Link>

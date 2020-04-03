@@ -1,6 +1,7 @@
 import projects from '../lib/projects-content.json'
 import { find } from 'lodash'
 import {
+  Badge,
   BaseStyles,
   Box,
   Button,
@@ -12,9 +13,11 @@ import {
 } from 'theme-ui'
 import { GitHub, Maximize2, ExternalLink } from 'react-feather'
 import Player from 'react-player'
+import { getThemeByName } from '../lib/themes.js'
 
 export default ({ actions, id, inModal = false }) => {
   const {
+    theme: themeName,
     video,
     image,
     url,
@@ -27,6 +30,7 @@ export default ({ actions, id, inModal = false }) => {
   const thumbnail =
     image?.toLowerCase().endsWith('medium.png') ||
     image?.toLowerCase().endsWith('medium.jpg')
+  const theme = getThemeByName(themeName)
   return (
     <Box
       as="article"
@@ -39,7 +43,7 @@ export default ({ actions, id, inModal = false }) => {
       <Box
         as="header"
         sx={{
-          bg: 'primary',
+          bg: theme.color,
           color: 'white',
           py: [3, 4],
           px: [3, 4, 5],
@@ -98,11 +102,7 @@ export default ({ actions, id, inModal = false }) => {
             </IconButton>
           )}
         </Box>
-        <Link
-          target="_blank"
-          href={url}
-          sx={{ display: 'flex', alignItems: 'center' }}
-        >
+        <Link target="_blank" href={url} sx={{ pr: 4 }}>
           <Heading
             as="h1"
             variant="headline"
@@ -110,12 +110,23 @@ export default ({ actions, id, inModal = false }) => {
               fontSize: [4, 5],
               color: 'white',
               my: 0,
-              pr: 4,
-              flex: '1 1 auto'
+              display: 'inline',
+              mr: [3, 4]
             }}
           >
             {name}
           </Heading>
+          <Badge
+            variant="lg"
+            sx={{
+              bg: 'sheet',
+              color: theme.color,
+              mt: 2,
+              verticalAlign: 'bottom'
+            }}
+          >
+            {theme.name}
+          </Badge>
         </Link>
       </Box>
       <Box
@@ -128,7 +139,7 @@ export default ({ actions, id, inModal = false }) => {
             thumbnail ? '166px 1fr' : null
           ],
           gridGap: thumbnail && [null, 4],
-          bg: 'primary',
+          bg: theme.color,
           color: 'white',
           px: [3, 4, 5],
           pb: 4
@@ -188,7 +199,7 @@ export default ({ actions, id, inModal = false }) => {
             variant="outline"
             as="a"
             href={devpost}
-            sx={{ fontSize: [1, 2], mt: 3, mb: [4, 5] }}
+            sx={{ color: theme.color, fontSize: [1, 2], mt: 3, mb: [4, 5] }}
           >
             See more on Devpost
           </Button>

@@ -2,7 +2,7 @@ import { Heading, Grid, Card } from 'theme-ui'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import themes from '../lib/themes'
-import { last, kebabCase } from 'lodash'
+import { kebabCase } from 'lodash'
 
 export default ({ showAll = true, minimal = false, ...props }) => {
   const { pathname, query } = useRouter()
@@ -11,6 +11,7 @@ export default ({ showAll = true, minimal = false, ...props }) => {
     <Heading
       key="heading"
       as="h2"
+      id="themes"
       variant="subhead"
       sx={{ color: 'muted', mb: 3 }}
     >

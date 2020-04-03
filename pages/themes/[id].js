@@ -1,27 +1,14 @@
 import { Box, Container, Badge } from 'theme-ui'
 import ProjectsGrid from '../../components/projects-grid'
 import Themes from '../../components/themes'
-import themes from '../../lib/themes'
-import { map, kebabCase, find } from 'lodash'
+import { getThemesSlugs, getThemeBySlug } from '../../lib/themes'
+import { filter } from 'lodash'
 
 export default ({ theme, projects = [] }) => (
   <>
     <Box as="header" variant="headerLeft">
       <Container>
-        <Badge
-          variant="circle"
-          sx={{
-            fontSize: [2, 3],
-            display: 'inline-block',
-            fontFamily: 'heading',
-            borderRadius: 'circle',
-            bg: theme.color,
-            px: 3,
-            py: 1,
-            color: 'sheet',
-            mb: 2
-          }}
-        >
+        <Badge variant="lg" sx={{ bg: theme.color, color: 'sheet', mb: 2 }}>
           Theme
         </Badge>
         <h1 style={{ color: theme.color }}>{theme.name}</h1>
@@ -36,18 +23,15 @@ export default ({ theme, projects = [] }) => (
 )
 
 export const getStaticPaths = async () => {
-  const paths = map(themes, 'name')
-    .map(kebabCase)
-    .map(id => ({ params: { id } }))
+  const paths = getThemesSlugs().map(id => ({ params: { id } }))
   return { paths, fallback: false }
 }
 
 export const getStaticProps = async ({ params }) => {
   const { id } = params
-  const theme = find(themes, t => kebabCase(t.name) === id)
+  const theme = getThemeBySlug(id)
   const loadJSON = require('load-json-file')
-  const projects = await loadJSON('./lib/projects-min.json')
-  console.log(theme, projects)
-  // filter projects
+  let projects = await loadJSON('./lib/projects-min.json')
+  projects = filter(projects, { theme: theme.name })
   return { props: { theme, projects } }
 }

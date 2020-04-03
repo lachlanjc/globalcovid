@@ -161,7 +161,8 @@ export default ({ titles = [] }) => (
             sx={{
               fontSize: 2,
               border: '3px solid',
-              borderColor: 'primary',
+              borderColor: 'blue',
+              bg: 'blue',
               mr: 3,
               mb: 2
             }}
@@ -170,7 +171,7 @@ export default ({ titles = [] }) => (
           </Button>
         </Link>
         <Link href="/judges" passHref>
-          <Button variant="outline" as="a" sx={{ mb: 2 }}>
+          <Button variant="outline" as="a" sx={{ color: 'accent', mb: 2 }}>
             Meet the judges →
           </Button>
         </Link>
