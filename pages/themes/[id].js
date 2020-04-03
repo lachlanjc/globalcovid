@@ -18,7 +18,7 @@ export default ({ theme, projects = [] }) => (
             bg: theme.color,
             px: 3,
             py: 1,
-            color: 'text',
+            color: 'sheet',
             mb: 2
           }}
         >
