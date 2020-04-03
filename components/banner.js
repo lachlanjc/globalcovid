@@ -10,7 +10,7 @@ export default ({ titles = [] }) => (
       bg: 'primary',
       color: 'white',
       position: 'relative',
-      overflowX: 'hidden'
+      overflow: 'hidden'
     }}
   >
     <Box
@@ -73,7 +73,13 @@ export default ({ titles = [] }) => (
           mb: 4,
           '> span': {
             display: 'block',
-            fontSize: [5, null, 6, 7]
+            fontSize: [5, 6],
+            '@media (max-width: 22em)': {
+              fontSize: 4
+            },
+            '@media (min-width: 72em)': {
+              fontSize: 7
+            }
           },
           kbd: {
             display: 'inline-block',
@@ -96,24 +102,32 @@ export default ({ titles = [] }) => (
         <span>
           from <kbd>175</kbd> countries
         </span>
-        <span>
-          created <kbd>1,560</kbd> projects to
-        </span>
         <Text
           as="span"
           sx={{
+            display: 'inline !important',
+            br: { display: ['none', 'block', 'none'] }
+          }}
+        >
+          created <kbd>1,560</kbd> projects
+          <br /> to{' '}
+        </Text>
+        <Text
+          as="span"
+          sx={{
+            display: 'inline !important',
             color: 'accent',
             span: { mx: 2 },
             transition: 'text-shadow 1s ease-in-out',
             ':hover': {
               textShadow: theme => `0 0 16px ${theme.colors.accent}`
             },
-            br: { display: [null, 'none'] }
+            br: { display: [null, null, 'none'] }
           }}
         >
           #Build<span>For</span>
           <br />
-          COVID19.
+          COVID19
         </Text>
       </Heading>
     </Container>
