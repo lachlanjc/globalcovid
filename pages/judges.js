@@ -1,4 +1,4 @@
-import { Box, Container, Text } from 'theme-ui'
+import { Box, Container } from 'theme-ui'
 import fetch from 'isomorphic-unfetch'
 
 export default ({ judges }) => (
@@ -12,29 +12,12 @@ export default ({ judges }) => (
         </p>
       </Container>
     </Box>
-    <Container
-      sx={{
-        pb: [4, null, 5],
-        fontSize: 2,
-        ul: {
-          columnWidth: 256,
-          columnGap: [3, null, 4],
-          listStyle: 'none',
-          pl: 0
-        },
-        li: {
-          breakInside: 'avoid',
-          py: 1,
-          borderBottom: '1px solid',
-          borderBottomColor: 'border'
-        }
-      }}
-    >
-      <ul>
+    <Container sx={{ pb: [4, null, 5] }}>
+      <Box as="ul" variant="list">
         {judges.map(judge => (
           <li key={judge}>{judge}</li>
         ))}
-      </ul>
+      </Box>
     </Container>
   </>
 )
