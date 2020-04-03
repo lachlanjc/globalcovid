@@ -119,7 +119,7 @@ export default ({ actions, id, inModal = false }) => {
           <Badge
             variant="lg"
             sx={{
-              bg: 'sheet',
+              bg: 'snow',
               color: theme.color,
               mt: 2,
               verticalAlign: 'bottom'
