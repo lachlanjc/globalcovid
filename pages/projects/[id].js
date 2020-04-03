@@ -1,6 +1,6 @@
-import { Box, Button, Card, Container, Flex, Heading } from 'theme-ui'
-import Link from 'next/link'
+import { Box, Card, Container, Heading } from 'theme-ui'
 import ProjectSheet from '../../components/project-sheet'
+import CTA from '../../components/cta'
 import Themes from '../../components/themes'
 import { map, find } from 'lodash'
 
@@ -24,28 +24,11 @@ export default ({ project = {} }) => (
         >
           A project from <span>#BuildforCOVID19</span>
         </Heading>
-        <Flex sx={{ alignItems: 'center', flexWrap: 'wrap', mb: [3, 4] }}>
-          <Link href="/" passHref>
-            <Button
-              as="a"
-              sx={{
-                fontSize: 2,
-                border: '3px solid',
-                borderColor: 'blue',
-                bg: 'blue',
-                mr: 3,
-                mb: 2
-              }}
-            >
-              Learn more →
-            </Button>
-          </Link>
-          <Link href="/projects" passHref>
-            <Button variant="outline" as="a" sx={{ color: 'accent', mb: 2 }}>
-              See all projects →
-            </Button>
-          </Link>
-        </Flex>
+        <CTA
+          primary={['/', 'Learn more']}
+          secondary={['/projects', 'See all projects']}
+          sx={{ mb: [3, 4] }}
+        />
         <Themes minimal />
       </Card>
     </Container>

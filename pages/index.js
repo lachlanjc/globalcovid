@@ -1,7 +1,7 @@
-import { Button, Container, Flex, Heading, Text } from 'theme-ui'
-import Link from 'next/link'
-import Banner from '../components/banner'
+import { Container, Heading, Text } from 'theme-ui'
 import About from '../components/about'
+import Banner from '../components/banner'
+import CTA from '../components/cta'
 import ProjectsCopy from '../components/projects.mdx'
 import Themes from '../components/themes'
 import ProjectsGrid from '../components/projects-grid'
@@ -25,34 +25,11 @@ export default ({ titles = [] }) => (
       >
         <ProjectsCopy />
       </Text>
-      <Flex
-        sx={{
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          mb: [4, 5]
-        }}
-      >
-        <Link href="/projects" passHref>
-          <Button
-            as="a"
-            sx={{
-              fontSize: 2,
-              border: '3px solid',
-              borderColor: 'blue',
-              bg: 'blue',
-              mr: 3,
-              mb: 2
-            }}
-          >
-            See all projects →
-          </Button>
-        </Link>
-        <Link href="/judges" passHref>
-          <Button variant="outline" as="a" sx={{ color: 'accent', mb: 2 }}>
-            Meet the judges →
-          </Button>
-        </Link>
-      </Flex>
+      <CTA
+        primary={['/projects', 'See all projects']}
+        secondary={['/judges', 'Meet the judges']}
+        sx={{ mb: [4, 5] }}
+      />
       <Themes />
       <ProjectsGrid projects={projects} />
     </Container>
