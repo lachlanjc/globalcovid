@@ -93,12 +93,14 @@ export default ({ titles = [] }) => (
             }
           }}
         >
-          <span>Last weekend,</span>
           <span>
-            <kbd>18,872</kbd> people made
+            <kbd>18,000+</kbd> innovators
           </span>
           <span>
-            <kbd>1,560</kbd> projects to
+            from <kbd>175</kbd> countries
+          </span>
+          <span>
+            created <kbd>1,560</kbd> projects to
           </span>
           <Text
             as="span"
