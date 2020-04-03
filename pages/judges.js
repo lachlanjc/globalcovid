@@ -3,16 +3,16 @@ import fetch from 'isomorphic-unfetch'
 
 export default ({ judges }) => (
   <>
-    <Box as="header" variant="header">
-      <Container sx={{ textAlign: 'left', h1: { maxWidth: 'none' } }}>
+    <Box as="header" variant="headerLeft">
+      <Container>
         <h1>Judges</h1>
-        <Text as="p" sx={{ maxWidth: 'copy', mt: -3, mb: 4, fontSize: 2 }}>
+        <p>
           We’d like to thank all of our judges from the health, science and
           technology sectors for contributing their time and expertise. On
           behalf of the organizing team from Slow Ventures, and our supporting
           tech ecosystem companies and partners, we’re so grateful to the
-          following organizations—
-        </Text>
+          following organizations:
+        </p>
       </Container>
     </Box>
     <Container
