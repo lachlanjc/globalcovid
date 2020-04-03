@@ -23,13 +23,39 @@ export default ({ showAll = true, minimal = false, ...props }) => {
       gap={3}
       sx={{
         pb: minimal ? [3, 4] : [4, 5],
-        a: { textAlign: 'left', py: minimal ? 3 : [3, 4] }
+        a: {
+          borderRadius: 'extra',
+          fontSize: 2,
+          fontWeight: 'bold',
+          lineHeight: 'title',
+          overflow: 'hidden',
+          position: 'relative',
+          px: 3,
+          py: minimal ? 3 : [3, 4],
+          textAlign: 'left',
+          textDecoration: 'none',
+          WebkitTapHighlightColor: 'transparent',
+          transition:
+            'transform .25s ease-in-out, box-shadow .125s ease-in-out',
+          ':hover,:focus': {
+            transform: 'scale(1.25) rotate(-8deg)',
+            zIndex: 2,
+            boxShadow: 'elevated'
+          },
+          '@media (prefers-reduced-motion: reduce)': {
+            transform: 'none !important'
+          }
+        }
       }}
       {...props}
     >
       {showAll && (
         <Link href="/projects" passHref>
-          <Card as="a" variant="nav" sx={{ bg: 'sunken', color: 'text' }}>
+          <Card
+            as="a"
+            variant="nav"
+            sx={{ bg: 'sunken', color: 'text', boxShadow: 'card' }}
+          >
             All Themes
           </Card>
         </Link>
@@ -44,26 +70,7 @@ export default ({ showAll = true, minimal = false, ...props }) => {
               boxShadow: theme =>
                 active === kebabCase(name)
                   ? `0 0 0 3px ${theme.colors.sheet}, 0 0 0 6px ${color}`
-                  : 'card',
-              p: 3,
-              borderRadius: 'extra',
-              textDecoration: 'none',
-              position: 'relative',
-              overflow: 'hidden',
-              fontSize: 2,
-              fontWeight: 'bold',
-              lineHeight: 'title',
-              WebkitTapHighlightColor: 'transparent',
-              transition:
-                'transform .25s ease-in-out, box-shadow .125s ease-in-out',
-              ':hover,:focus': {
-                transform: 'scale(1.25) rotate(-8deg)',
-                zIndex: 2,
-                boxShadow: 'elevated'
-              },
-              '@media (prefers-reduced-motion: reduce)': {
-                transform: 'none !important'
-              }
+                  : 'card'
             }}
           >
             {name}
