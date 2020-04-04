@@ -6,45 +6,32 @@
   },
   {
     "name": "Health/Vulnerable Populations",
-    "color": "#ec3750"
+    "color": "#FF1B8C"
   },
   {
     "name": "Vulnerable Populations",
-    "color": "#FF1B8C",
+    "color": "#FF1FC7",
     "desc": "The set of problems facing the elderly and the immuno-compromised, such as access to meals and groceries, and supporting those who are losing jobs and income."
   },
   {
     "name": "Businesses",
-    "color": "#FF1FC7",
+    "color": "#E71DFF",
     "desc": "The set of problems that businesses are facing to stay afloat, collaborate effectively, and move parts of their business online."
   },
   {
-    "name": "Vulnerable Populations/Businesses",
-    "color": "#ec3750"
-  },
-  {
     "name": "Community",
-    "color": "#E71DFF",
+    "color": "#961CFF",
     "desc": "Promoting connection to friends, family, and neighbors to combat social isolation and the digitizing of public services for local governments."
   },
   {
-    "name": "Vulnerable Populations/Community",
-    "color": "#ec3750"
-  },
-  {
     "name": "Education",
-    "color": "#961CFF",
+    "color": "#6122FF",
     "desc": "Alternative learning environments and tools for students, teachers, and entire school systems."
   },
   {
     "name": "Entertainment",
-    "color": "#6122FF",
-    "desc": "Alternatives to traditional forms of entertainment that can keep the talent and audiences safe and healthy."
-  },
-  {
-    "name": "Other",
     "color": "#4D2DFF",
-    "desc": "Feel empowered to get creative!"
+    "desc": "Alternatives to traditional forms of entertainment that can keep the talent and audiences safe and healthy."
   },
   {
     "name": "Hack Club",
