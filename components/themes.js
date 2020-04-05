@@ -16,7 +16,7 @@ export default ({ showAll = false, minimal = false, ...props }) => {
     overflow: 'hidden',
     position: 'relative',
     color: 'white',
-    p: [2, 3],
+    p: [3, 3],
     py: minimal ? 3 : [3, 4],
     textAlign: 'left',
     textDecoration: 'none',
