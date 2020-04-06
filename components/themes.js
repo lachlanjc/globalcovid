@@ -4,33 +4,15 @@ import Link from 'next/link'
 import themes from '../lib/themes'
 import { kebabCase } from 'lodash'
 
-export default ({ showAll = false, minimal = false, ...props }) => {
+export default ({ minimal = false, ...props }) => {
   const { pathname, query } = useRouter()
-  const active = pathname.startsWith('/themes/') ? query.id : false
-  const { theme, colorMode } = useThemeUI()
-  const card = {
-    borderRadius: 'extra',
-    fontSize: 2,
-    fontWeight: 'bold',
-    lineHeight: 'title',
-    overflow: 'hidden',
-    position: 'relative',
-    color: 'white',
-    p: [3, 3],
-    py: minimal ? 3 : [3, 4],
-    textAlign: 'left',
-    textDecoration: 'none',
-    WebkitTapHighlightColor: 'transparent',
-    transition: 'transform .25s ease-in-out, box-shadow .125s ease-in-out',
-    ':hover,:focus': {
-      transform: 'scale(1.25) rotate(-8deg)',
-      zIndex: 2,
-      boxShadow: 'elevated'
-    },
-    '@media (prefers-reduced-motion: reduce)': {
-      transform: 'none !important'
-    }
-  }
+  const active =
+    pathname === '/'
+      ? 'featured'
+      : pathname.startsWith('/themes/')
+      ? query.id
+      : false
+  const { theme } = useThemeUI()
   return [
     <Heading
       key="heading"
@@ -49,21 +31,6 @@ export default ({ showAll = false, minimal = false, ...props }) => {
       sx={{ pb: minimal ? [3, 4] : [4, 5] }}
       {...props}
     >
-      {showAll && (
-        <Link href="/projects" passHref prefetch={false}>
-          <Card
-            as="a"
-            sx={{
-              ...card,
-              bg: colorMode === 'dark' ? 'muted' : 'sunken',
-              color: 'text',
-              boxShadow: 'card'
-            }}
-          >
-            All Themes
-          </Card>
-        </Link>
-      )}
       {themes.map(({ name, color }) => (
         <Link
           href={`/themes/${kebabCase(name)}`}
@@ -73,7 +40,30 @@ export default ({ showAll = false, minimal = false, ...props }) => {
         >
           <Card
             as="a"
-            sx={card}
+            sx={{
+              borderRadius: 'extra',
+              fontSize: 2,
+              fontWeight: 'bold',
+              lineHeight: 'title',
+              overflow: 'hidden',
+              position: 'relative',
+              color: 'white',
+              p: [3, 3],
+              py: minimal ? null : [null, 4],
+              textAlign: 'left',
+              textDecoration: 'none',
+              WebkitTapHighlightColor: 'transparent',
+              transition:
+                'transform .25s ease-in-out, box-shadow .125s ease-in-out',
+              ':hover,:focus': {
+                transform: 'scale(1.25) rotate(-8deg)',
+                zIndex: 2,
+                boxShadow: 'elevated'
+              },
+              '@media (prefers-reduced-motion: reduce)': {
+                transform: 'none !important'
+              }
+            }}
             style={{
               backgroundColor: color,
               boxShadow:
