@@ -1,6 +1,6 @@
 import { Flex, Button, useColorMode } from 'theme-ui'
 import Link from 'next/link'
-import { reverse } from 'lodash'
+import { isEmpty, reverse } from 'lodash'
 
 export default ({ primary = [], secondary = {}, sx = {} }) => {
   const [colorMode] = useColorMode()
@@ -29,11 +29,13 @@ export default ({ primary = [], secondary = {}, sx = {} }) => {
           {primary[1]} →
         </Button>
       </Link>
-      <Link href={secondary[0]} prefetch={false} passHref>
-        <Button variant="outline" as="a" sx={{ color: colors[1], mb: 2 }}>
-          {secondary[1]} →
-        </Button>
-      </Link>
+      {!isEmpty(secondary?.[0]) && (
+        <Link href={secondary[0]} prefetch={false} passHref>
+          <Button variant="outline" as="a" sx={{ color: colors[1], mb: 2 }}>
+            {secondary[1]} →
+          </Button>
+        </Link>
+      )}
     </Flex>
   )
 }

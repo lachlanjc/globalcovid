@@ -4,7 +4,6 @@ import {
   Badge,
   BaseStyles,
   Box,
-  Button,
   Heading,
   IconButton,
   Image,
@@ -13,6 +12,7 @@ import {
 } from 'theme-ui'
 import { GitHub, Maximize2, ExternalLink } from 'react-feather'
 import Player from 'react-player'
+import CTA from './cta'
 import { getThemeByName } from '../lib/themes.js'
 
 export default ({ actions, id, inModal = false }) => {
@@ -24,6 +24,7 @@ export default ({ actions, id, inModal = false }) => {
     name,
     desc,
     creators,
+    email,
     devpost,
     content = ''
   } = find(projects, { id })
@@ -176,14 +177,7 @@ export default ({ actions, id, inModal = false }) => {
         sx={{
           pt: [4],
           pb: [3, 4, 5],
-          px: [3, 4, 5],
-          '* a': { color: theme.color },
-          'p, li': { fontSize: 2, maxWidth: 'copy' },
-          'div:first-of-type': {
-            borderRadius: 'extra',
-            overflow: 'hidden'
-          },
-          'h4,h5,h6': { fontSize: 2 }
+          px: [3, 4, 5]
         }}
       >
         <Box sx={{ my: [3, 4], img: [3, 4] }}>
@@ -195,17 +189,25 @@ export default ({ actions, id, inModal = false }) => {
             />
           )}
         </Box>
-        <BaseStyles dangerouslySetInnerHTML={{ __html: content }} />
-        {devpost && (
-          <Button
-            variant="outline"
-            as="a"
-            href={devpost}
-            sx={{ color: theme.color, fontSize: [1, 2], mt: 3, mb: [4, 5] }}
-          >
-            See more on Devpost
-          </Button>
-        )}
+        <Box
+          as="section"
+          sx={{
+            '* a': { color: theme.color },
+            'p, li': { fontSize: 2, maxWidth: 'copy' },
+            'div:first-of-type': {
+              borderRadius: 'extra',
+              overflow: 'hidden'
+            },
+            'h4,h5,h6': { fontSize: 2 }
+          }}
+        >
+          <BaseStyles dangerouslySetInnerHTML={{ __html: content }} />
+        </Box>
+        <CTA
+          primary={[`mailto:${email}`, 'Email creators']}
+          secondary={[devpost, 'See more on Devpost']}
+          sx={{ mt: 3, mb: 4 }}
+        />
       </Box>
     </Box>
   )
