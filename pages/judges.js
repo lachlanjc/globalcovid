@@ -7,8 +7,8 @@ export default ({ judges }) => (
       <Container>
         <h1>Judges</h1>
         <p>
-          We’d like to thank all of our judges from the health, science and
-          technology sectors for contributing their time and expertise.
+          We’d like to thank all of our judges for contributing their time and
+          expertise.
         </p>
       </Container>
     </Box>
