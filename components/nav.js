@@ -93,7 +93,7 @@ export default ({}) => {
             }}
           >
             <Image src="/icon-flat.svg" width={64} sx={{ mr: 3 }} />
-            Recap
+            Home
           </NavLink>
         </Link>
         <Link
