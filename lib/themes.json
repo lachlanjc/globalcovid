@@ -1,36 +1,42 @@
 [
   {
-    "name": "Health",
+    "name": "Featured",
     "color": "#FF0F65",
+    "desc": "A selection of our judges’ favorite projects."
+  },
+  {
+    "name": "Health",
+    "color": "#FE0D9B",
     "desc": "Address and scale a range of health initiatives, including preventative/hygiene behaviors (especially for at-risk countries and populations), supporting frontline health workers, scaling telemedicine, contact tracing/containment strategies, treatment and diagnosis development."
   },
   {
-    "name": "Health/Vulnerable Populations",
-    "color": "#FF1B8C"
+    "name": "Health Education",
+    "color": "#FC0FD1",
+    "desc": "Health education initiatives, including sharing information, preventative/hygiene behaviors (especially for at-risk countries and populations), and scaling telemedicine."
   },
   {
     "name": "Vulnerable Populations",
-    "color": "#FF1FC7",
-    "desc": "The set of problems facing the elderly and the immuno-compromised, such as access to meals and groceries, and supporting those who are losing jobs and income."
+    "color": "#F01FFB",
+    "desc": "Problems faced by the groups of people who are disproportionately affected by the various health, economic, and social issues related to the COVID outbreak around the world, such as those with underlying health conditions or a thin social safety net."
   },
   {
     "name": "Businesses",
-    "color": "#E71DFF",
+    "color": "#BF28FA",
     "desc": "The set of problems that businesses are facing to stay afloat, collaborate effectively, and move parts of their business online."
   },
   {
     "name": "Community",
-    "color": "#961CFF",
+    "color": "#912CF9",
     "desc": "Promoting connection to friends, family, and neighbors to combat social isolation and the digitizing of public services for local governments."
   },
   {
     "name": "Education",
-    "color": "#6122FF",
+    "color": "#622EF7",
     "desc": "Alternative learning environments and tools for students, teachers, and entire school systems."
   },
   {
     "name": "Entertainment",
-    "color": "#4D2DFF",
+    "color": "#342EF6",
     "desc": "Alternatives to traditional forms of entertainment that can keep the talent and audiences safe and healthy."
   },
   {
