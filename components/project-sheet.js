@@ -204,7 +204,7 @@ export default ({ actions, id, inModal = false }) => {
           <BaseStyles dangerouslySetInnerHTML={{ __html: content }} />
         </Box>
         <CTA
-          primary={[`mailto:${email}`, 'Email creators']}
+          primary={[`mailto:${email}`, 'Email the maker']}
           secondary={[devpost, 'See more on Devpost']}
           sx={{ mt: 3, mb: 4 }}
         />

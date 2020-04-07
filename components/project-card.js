@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Box, Link, Card, Heading, Text } from 'theme-ui'
 // import { useRouter } from 'next/router'
 import ProjectModal from './project-modal'
-import { Star } from 'react-feather'
 import { flag } from 'country-emoji'
 import { getThemeColor } from '../lib/themes'
 
@@ -10,7 +9,7 @@ export default props => {
   // const router = useRouter()
   // const [initialPath] = useState(router.pathname)
   const [open, setOpen] = useState(false)
-  const { id, theme, feat, country, name, desc } = props
+  const { id, theme, country, name, desc } = props
   const closeModal = () => {
     setOpen(false)
     // router.push(router.pathname, initialPath, { shallow: true })
@@ -28,31 +27,6 @@ export default props => {
         my: 4
       }}
     >
-      {feat && (
-        <Box
-          title="Featured project"
-          sx={{
-            bg: getThemeColor(theme),
-            color: 'white',
-            polygon: {
-              fill: 'white',
-              transform: 'rotate(-45deg)',
-              transformOrigin: 'center center'
-            },
-            width: 48,
-            height: 48,
-            display: 'flex',
-            pl: 32,
-            pt: 18,
-            position: 'absolute',
-            top: -24,
-            left: -24,
-            transform: 'rotate(45deg)'
-          }}
-        >
-          <Star size={12} aria-label="Star icon" />
-        </Box>
-      )}
       <Text
         as="span"
         title={`Made in ${country}`}
