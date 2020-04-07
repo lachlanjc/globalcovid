@@ -44,8 +44,10 @@ export default props => {
         <Link
           href={`/projects/${id}`}
           onClick={e => {
-            e.preventDefault()
-            setOpen(true)
+            if (!e.metaKey) {
+              e.preventDefault()
+              setOpen(true)
+            }
             // router.push(router.pathname, `/projects/${id}`, { shallow: true })
           }}
           sx={{ position: 'sticky', top: 0, color: getThemeColor(theme) }}
