@@ -2,9 +2,8 @@ import { Box, Container } from 'theme-ui'
 import ProjectsCopy from '../../components/projects.mdx'
 import ProjectsGrid from '../../components/projects-grid'
 import Themes from '../../components/themes'
-import projects from '../../lib/projects-min.json'
 
-export default () => (
+export default ({ projects = [] }) => (
   <>
     <Box as="header" variant="headerLeft">
       <Container>
@@ -18,3 +17,9 @@ export default () => (
     </Container>
   </>
 )
+
+export const getStaticProps = async () => {
+  const { getProjectCards } = require('../../lib/projects')
+  let projects = await getProjectCards()
+  return { props: { projects } }
+}
