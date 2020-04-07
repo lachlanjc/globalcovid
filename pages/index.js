@@ -53,7 +53,8 @@ export const getStaticProps = async () => {
   titles = uniq(titles)
   titles = take(shuffle(titles), 64)
   // Getting min bundle for sending as props
-  let projects = await loadJSON('./lib/projects-min.json')
+  const { getProjectCards } = require('../lib/projects')
+  let projects = await getProjectCards()
   projects = filter(projects, { feat: true })
   return { props: { titles, projects } }
 }
