@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }) => {
   const { id } = params
   const theme = getThemeBySlug(id)
-  const { getProjectCards } = require('../lib/projects')
+  const { getProjectCards } = require('../../lib/projects')
   let projects = await getProjectCards()
   projects =
     theme.name === 'Featured'

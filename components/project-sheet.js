@@ -180,8 +180,18 @@ export default ({ actions, id, inModal = false }) => {
           px: [3, 4, 5]
         }}
       >
-        <Box sx={{ my: [3, 4], img: [3, 4] }}>
-          {video && <Player url={video} width="100%" height={512} />}
+        <Box
+          sx={{
+            my: [3, 4],
+            '> div': {
+              borderRadius: 'default',
+              overflow: 'hidden',
+              minHeight: [256, 384, 512],
+              ' + img': { mt: 4 }
+            }
+          }}
+        >
+          {video && <Player url={video} width="100%" />}
           {image && !thumbnail && (
             <Image
               src={image}

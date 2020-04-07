@@ -26,9 +26,9 @@ export default ({ projects = [] }) => (
 )
 
 export const getStaticProps = async () => {
-  const loadJSON = require('load-json-file')
   const { filter } = require('lodash')
-  let projects = await loadJSON('./lib/projects-min.json')
+  const { getProjectCards } = require('../../lib/projects')
+  let projects = await getProjectCards()
   projects = filter(projects, { hc: true })
   return { props: { projects } }
 }
