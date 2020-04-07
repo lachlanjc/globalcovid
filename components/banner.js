@@ -1,9 +1,9 @@
 import { Box, Container, Heading, Text } from 'theme-ui'
-import Marquee from './marquee'
 import { ColorSwitcher } from './nav'
-import { shuffle } from 'lodash'
+// import Marquee from './marquee'
+// import { shuffle } from 'lodash'
 
-export default ({ titles = [] }) => (
+export default () => (
   <Box
     as="header"
     sx={{
@@ -13,7 +13,7 @@ export default ({ titles = [] }) => (
       overflow: 'hidden'
     }}
   >
-    <Box
+    {/* <Box
       as="aside"
       aria-hidden
       sx={{
@@ -35,7 +35,7 @@ export default ({ titles = [] }) => (
           <span key={title}>{title}</span>
         ))}
       </Marquee>
-    </Box>
+    </Box> */}
     <ColorSwitcher
       sx={{
         color: 'white',
@@ -47,7 +47,7 @@ export default ({ titles = [] }) => (
         ':focus,:hover': { color: 'accent' }
       }}
     />
-    <Container as="article" sx={{ pt: [5, 6], pb: [3, 4] }}>
+    <Container as="article" sx={{ pt: [4, 5], pb: [3, 4] }}>
       <Text
         as="p"
         variant="subtitle"

@@ -181,7 +181,7 @@ export default ({ actions, id, inModal = false }) => {
         }}
       >
         <Box sx={{ my: [3, 4], img: [3, 4] }}>
-          {video && <Player url={video} width="100%" />}
+          {video && <Player url={video} width="100%" height={512} />}
           {image && !thumbnail && (
             <Image
               src={image}

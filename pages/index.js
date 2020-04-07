@@ -5,11 +5,10 @@ import CTA from '../components/cta'
 import ProjectsCopy from '../components/projects.mdx'
 import Themes from '../components/themes'
 import ProjectsGrid from '../components/projects-grid'
-import { map, uniq, filter, shuffle, take } from 'lodash'
 
-export default ({ titles = [], projects = [] }) => (
+export default ({ projects = [] }) => (
   <>
-    <Banner titles={titles} />
+    <Banner />
     <Box as="section" sx={{ bg: 'sheet', py: [4, 5] }}>
       <Container
         sx={{
@@ -44,6 +43,8 @@ export default ({ titles = [], projects = [] }) => (
 )
 
 export const getStaticProps = async () => {
+  /*
+  const { map, uniq, filter, shuffle, take } = require('lodash')
   const loadJSON = require('load-json-file')
   // Only content version has creator names
   const list = await loadJSON('./lib/projects-content.json')
@@ -52,7 +53,9 @@ export const getStaticProps = async () => {
     .split(', ')
   titles = uniq(titles)
   titles = take(shuffle(titles), 64)
+  */
   // Getting min bundle for sending as props
+  const { filter } = require('lodash')
   const { getProjectCards } = require('../lib/projects')
   let projects = await getProjectCards()
   projects = filter(projects, { feat: true })
