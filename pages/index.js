@@ -36,7 +36,6 @@ export default ({ projects = [] }) => (
       <CTA
         primary={['/judges', 'Meet the judges']}
         secondary={['/projects', 'See all projects']}
-        sx={{ mt: [3, 4] }}
       />
     </Container>
   </>
@@ -59,5 +58,5 @@ export const getStaticProps = async () => {
   const { getProjectCards } = require('../lib/projects')
   let projects = await getProjectCards()
   projects = filter(projects, { feat: true })
-  return { props: { titles, projects } }
+  return { props: { projects } }
 }
