@@ -24,7 +24,7 @@ export default () => (
           variant="subtitle"
           sx={{ color: 'muted', mt: 3, mb: 4, fontFamily: 'body' }}
         >
-          Mar 26–30, 2020. (Projects will be listed here on Monday.)
+          Mar 26–30, 2020. (Featured projects coming Friday, April 10.)
         </Heading>
         <Button
           as="a"
