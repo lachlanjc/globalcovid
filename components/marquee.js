@@ -19,7 +19,7 @@ export default props => (
       textTransform: 'uppercase',
       letterSpacing: '.04em',
       animation: `${forwards} linear infinite alternate`,
-      animationDuration: ['128s', '96s'],
+      animationDuration: ['160s', '128s'],
       width: 'fit-content',
       ':last-of-type': {
         animationName: backwards
@@ -29,9 +29,7 @@ export default props => (
       },
       span: {
         fontSize: [0, 1, 2],
-        mr: 3,
-        ':nth-of-type(3n+1)': { color: 'orange' },
-        ':nth-of-type(7n)': { color: 'accent' }
+        mr: 3
       }
     }}
     {...props}

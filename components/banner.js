@@ -1,7 +1,5 @@
-import { Box, Container, Heading, Text } from 'theme-ui'
+import { Box, Badge, Container, Heading, Text } from 'theme-ui'
 import { ColorSwitcher } from './nav'
-// import Marquee from './marquee'
-// import { shuffle } from 'lodash'
 
 export default () => (
   <Box
@@ -13,29 +11,6 @@ export default () => (
       overflow: 'hidden'
     }}
   >
-    {/* <Box
-      as="aside"
-      aria-hidden
-      sx={{
-        position: 'absolute',
-        top: [2, 3],
-        left: 0,
-        right: 0,
-        transform: ['scale(0.75) rotate(-2deg)', 'rotate(-4deg)'],
-        zIndex: 0
-      }}
-    >
-      <Marquee>
-        {titles.map(title => (
-          <span key={title}>{title}</span>
-        ))}
-      </Marquee>
-      <Marquee>
-        {shuffle(titles).map(title => (
-          <span key={title}>{title}</span>
-        ))}
-      </Marquee>
-    </Box> */}
     <ColorSwitcher
       sx={{
         color: 'white',
@@ -47,21 +22,10 @@ export default () => (
         ':focus,:hover': { color: 'accent' }
       }}
     />
-    <Container as="article" sx={{ pt: [4, 5], pb: [3, 4] }}>
-      <Text
-        as="p"
-        variant="subtitle"
-        sx={{
-          color: 'white',
-          opacity: 0.75,
-          mt: [3, 0],
-          fontSize: [2, 3],
-          fontWeight: 'bold',
-          textTransform: 'uppercase'
-        }}
-      >
+    <Container as="article" sx={{ pt: [4, 5] }}>
+      <Badge variant="header" sx={{ mt: [3, 0, -3] }}>
         Mar 26–30, 2020
-      </Text>
+      </Badge>
       <Heading
         as="h1"
         sx={{
