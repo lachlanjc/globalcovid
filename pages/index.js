@@ -14,7 +14,7 @@ export default ({ projects = [] }) => (
         sx={{
           position: 'relative',
           strong: { color: 'accent' },
-          '> p': { fontSize: [2, 3], maxWidth: 'copyPlus', mt: 0 }
+          '> p': { fontSize: [2, 3], maxWidth: 'copyPlus', my: [2, 3] }
         }}
       >
         <About />
