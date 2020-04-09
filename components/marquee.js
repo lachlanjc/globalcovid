@@ -19,7 +19,7 @@ export default props => (
       textTransform: 'uppercase',
       letterSpacing: '.04em',
       animation: `${forwards} linear infinite alternate`,
-      animationDuration: ['160s', '128s'],
+      animationDuration: ['192s', '160s'],
       width: 'fit-content',
       ':last-of-type': {
         animationName: backwards
