@@ -36,6 +36,7 @@ export default ({ projects = [] }) => (
       <CTA
         primary={['/judges', 'Meet the judges']}
         secondary={['/projects', 'See all projects']}
+        sx={{ mt: [3, 4] }}
       />
     </Container>
   </>

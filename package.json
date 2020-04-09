@@ -24,7 +24,7 @@
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-feather": "^2.0.3",
+    "react-feather": "^2.0.4",
     "react-modal": "^3.11.2",
     "react-player": "^1.15.3",
     "react-reveal": "^1.2.2",
