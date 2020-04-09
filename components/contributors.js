@@ -1,6 +1,5 @@
 import { Badge, Box } from 'theme-ui'
 import Marquee from './marquee'
-import { shuffle } from 'lodash'
 
 export default ({ titles = [] }) => (
   <Box
@@ -22,7 +21,7 @@ export default ({ titles = [] }) => (
     }}
   >
     <Box sx={{ pl: [3, 4, 5, 6], mb: [2, 0] }}>
-      <Badge variant="header">Featuring projects by</Badge>
+      <Badge variant="header">Featuring projects from</Badge>
     </Box>
     <Box
       sx={{
@@ -32,12 +31,12 @@ export default ({ titles = [] }) => (
       }}
     >
       <Marquee>
-        {titles.map(title => (
+        {titles[0].map(title => (
           <span key={title}>{title}</span>
         ))}
       </Marquee>
       <Marquee>
-        {shuffle(titles).map(title => (
+        {titles[1].map(title => (
           <span key={title}>{title}</span>
         ))}
       </Marquee>

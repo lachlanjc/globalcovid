@@ -45,22 +45,35 @@ export default ({ titles = [], projects = [] }) => (
 )
 
 export const getStaticProps = async () => {
-  const { uniq, flatten, filter, shuffle, take, trim } = require('lodash')
+  const {
+    uniq,
+    random,
+    flatten,
+    filter,
+    shuffle,
+    includes,
+    take,
+    trim
+  } = require('lodash')
   const emoji = require('country-emoji')
   const loadJSON = require('load-json-file')
   // Only content version has creator names
   const list = await loadJSON('./lib/projects-content.json')
   let titles = []
   list.forEach(p => {
-    const co = emoji.flag(p.country)
-    const cr = p.creators
+    let cr = p.creators
       .split(', ')
-      .map(c => `${co} ${c}`)
+      .filter(n => !includes(n, /[0-9]+/))
+      .filter(n => !includes(n, 'undefined'))
+      .filter(() =>
+        p.country === 'United States' ? random(1, true) < 0.3 : true
+      )
       .map(trim)
-    titles.push(cr)
+    const co = emoji.flag(p.country)
+    titles.push(cr.map(c => `${co} ${c}`))
   })
   titles = uniq(flatten(titles))
-  titles = take(shuffle(titles), 64)
+  titles = [take(shuffle(titles), 64), take(shuffle(titles), 64)]
   // Getting min bundle for sending as props
   const { getProjectCards } = require('../lib/projects')
   let projects = await getProjectCards()
