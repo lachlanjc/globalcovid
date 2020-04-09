@@ -6,12 +6,7 @@ import { kebabCase } from 'lodash'
 
 export default ({ minimal = false, ...props }) => {
   const { pathname, query } = useRouter()
-  const active =
-    pathname === '/'
-      ? 'featured'
-      : pathname.startsWith('/themes/')
-      ? query.id
-      : false
+  const active = pathname.startsWith('/themes/') ? query.id : false
   const { theme } = useThemeUI()
   return [
     <Heading

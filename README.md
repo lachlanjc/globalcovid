@@ -1,5 +1,7 @@
 # COVID-19 Global Hackathon
 
-[**globalcovid.netlify.com**](https://globalcovid.netlify.com)
+Made by [@lachlanjc](https://lachlanjc.me).
+
+[**covidglobalhackathon.com**](https://covidglobalhackathon.com)
 
 MIT License
