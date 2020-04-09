@@ -4,6 +4,7 @@ import {
   Badge,
   BaseStyles,
   Box,
+  Container,
   Heading,
   IconButton,
   Image,
@@ -12,8 +13,37 @@ import {
 } from 'theme-ui'
 import { GitHub, Maximize2, ExternalLink } from 'react-feather'
 import Player from 'react-player'
+import Flag from './flag'
 import CTA from './cta'
 import { getThemeByName } from '../lib/themes.js'
+
+const HackClub = () => (
+  <Box
+    as="section"
+    sx={{
+      py: 4,
+      position: 'relative',
+      bg: 'text',
+      color: 'background',
+      a: { color: '#ec3750' }
+    }}
+  >
+    <Flag sx={{ position: ['relative', null, 'absolute'], top: [-3, -4, 0] }} />
+    <Container variant="copy">
+      <Heading variant="subtitle" sx={{ color: 'inherit', mt: 0 }}>
+        By a <Link href="https://hackclub.com/">Hack Club</Link>{' '}
+        high&nbsp;schooler.
+      </Heading>
+      <Text sx={{ fontSize: 2, mt: 2 }}>
+        <Link href="https://hackclub.com/">Hack&nbsp;Club</Link> is a global
+        nonprofit network of high school makers & student-led coding clubs where
+        young people build the agency, the network, & the technical talent to
+        think big & do big things in the world. Founded in 2015 by a
+        16-year-old, Hack&nbsp;Clubs are now in nearly 400 high schools.
+      </Text>
+    </Container>
+  </Box>
+)
 
 export default ({ actions, id, inModal = false }) => {
   const {
@@ -172,10 +202,11 @@ export default ({ actions, id, inModal = false }) => {
           </Text>
         </div>
       </Box>
+      {id === 'notes-for-support' && <HackClub />}
       <Box
         as="article"
         sx={{
-          pt: [4],
+          pt: 4,
           pb: [3, 4, 5],
           px: [3, 4, 5]
         }}
