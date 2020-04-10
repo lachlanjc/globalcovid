@@ -4,8 +4,8 @@ import theme from '../lib/theme'
 export default ({
   title = 'COVID-19 Global Hackathon',
   description = 'The #BuildforCOVID19 Global Online Hackathon was an opportunity for developers around the world to tackle challenges related to the coronavirus (COVID-19) pandemic in March/April 2020. Expert judges from the health, science and technology fields selected the following highlighted projects.',
-  image = 'https://globalcovid.hackclub.com/card.png',
-  url = 'https://globalcovid.hackclub.com/'
+  image = 'https://covidglobalhackathon.com/card.png',
+  url = 'https://covidglobalhackathon.com/'
 }) => (
   <Head>
     <title>{title}</title>
