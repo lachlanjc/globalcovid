@@ -72,5 +72,5 @@ export const getStaticProps = async () => {
   const { getProjectCards } = require('../lib/projects')
   let projects = await getProjectCards()
   projects = filter(projects, { feat: true })
-  return { props: { titles, projects } }
+  return { props: { projects } }
 }
