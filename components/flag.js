@@ -3,6 +3,7 @@ import { Link, Image } from 'theme-ui'
 export default ({ sx }) => (
   <Link
     href="https://hackclub.com/"
+    target="_blank"
     title="Hack Club"
     sx={{
       position: 'absolute',
