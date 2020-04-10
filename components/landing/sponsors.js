@@ -8,17 +8,23 @@ const list = {
   Slack: true,
   TikTok: true,
   Twitter: false,
-  WeChat: false
+  WeChat: false,
+  AWS: true,
+  Salesforce: false
 }
 
-export default () => {
+export default ({ wide = false }) => {
   const [colorMode] = useColorMode()
   return (
     <Grid
-      gap={4}
+      as="section"
       sx={{
-        mt: 4,
-        gridTemplateColumns: 'repeat(2, 1fr)',
+        mt: wide ? [4, 5] : 4,
+        gridRowGap: [3, 4],
+        gridColumnGap: 2,
+        gridTemplateColumns: wide
+          ? ['repeat(2, 1fr)', 'repeat(auto-fit, minmax(200px, 1fr))']
+          : 'repeat(2, 1fr)',
         alignItems: 'center'
       }}
     >
@@ -34,7 +40,7 @@ export default () => {
               list[name] && colorMode === 'dark' ? '-white' : ''
             }.svg`}
             alt={`${name} logo`}
-            sx={{ height: '100%', maxWidth: '75%', maxHeight: 64 }}
+            sx={{ height: '100%', maxWidth: '75%', maxHeight: wide ? 48 : 64 }}
             loading="lazy"
           />
         </Link>

@@ -3,9 +3,9 @@ import theme from '../lib/theme'
 
 export default ({
   title = 'COVID-19 Global Hackathon',
-  description = '',
-  image = 'https://globalcovid.netlify.com/card.png',
-  url = 'https://globalcovid.netlify.com/'
+  description = 'The #BuildforCOVID19 Global Online Hackathon was an opportunity for developers around the world to tackle challenges related to the coronavirus (COVID-19) pandemic in March/April 2020. Expert judges from the health, science and technology fields selected the following highlighted projects.',
+  image = 'https://globalcovid.hackclub.com/card.png',
+  url = 'https://globalcovid.hackclub.com/'
 }) => (
   <Head>
     <title>{title}</title>
@@ -43,8 +43,6 @@ export default ({
       href={`${url}safari-pinned-tab.svg`}
       color={theme.colors.primary}
     />
-    <meta name="apple-mobile-web-app-title" content="COVID-19 Hackathon" />
-    <meta name="application-name" content="COVID-19 Hackathon" />
     <meta name="msapplication-TileColor" content={theme.colors.primary} />
     <meta name="theme-color" content={theme.colors.primary} />
   </Head>

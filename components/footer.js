@@ -1,5 +1,6 @@
-import { Box, Heading, Container, Text, Link } from 'theme-ui'
-import Flag from '../components/flag'
+import { Box, Container } from 'theme-ui'
+import Flag from './flag'
+import Content from './footer.mdx'
 
 export default () => (
   <Box
@@ -14,22 +15,23 @@ export default () => (
     }}
   >
     <Flag />
-    <Container variant="narrow">
-      <Heading
-        variant="headline"
-        sx={{ color: 'secondary', fontSize: [3, 4], mt: 0, mb: 3 }}
-      >
-        This website was made by teenagers in{' '}
-        <Link href="https://hackclub.com/">Hack&nbsp;Club</Link>
-      </Heading>
-      <Text sx={{ mb: 3 }}>
-        Design & code by <Link href="https://lachlanjc.me">@lachlanjc</Link>
-      </Text>
-      <Text>
-        <Link href="https://github.com/hackclub/globalcovid">
-          Open source on GitHub
-        </Link>
-      </Text>
+    <Container
+      variant="narrow"
+      sx={{
+        p: { mt: 3 },
+        a: { color: 'primary' },
+        h2: {
+          fontFamily: 'heading',
+          letterSpacing: 'headline',
+          lineHeight: 'heading',
+          color: 'secondary',
+          fontSize: [3, 4],
+          mt: 0,
+          mb: -2
+        }
+      }}
+    >
+      <Content />
     </Container>
   </Box>
 )
