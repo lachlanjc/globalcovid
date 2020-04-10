@@ -68,6 +68,7 @@ export const getStaticProps = async () => {
   titles = [take(shuffle(titles), 64), take(shuffle(titles), 64)]
   */
   // Getting min bundle for sending as props
+  const { filter } = require('lodash')
   const { getProjectCards } = require('../lib/projects')
   let projects = await getProjectCards()
   projects = filter(projects, { feat: true })
