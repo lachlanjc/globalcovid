@@ -67,6 +67,7 @@ export default ({ actions, id, inModal = false }) => {
     image?.toLowerCase().endsWith('medium.png') ||
     image?.toLowerCase().endsWith('medium.jpg')
   const theme = getThemeByName(themeName)
+  const HeadingWrapper = url ? Link : Box
   return (
     <Box
       as="article"
@@ -138,7 +139,7 @@ export default ({ actions, id, inModal = false }) => {
             </IconButton>
           )}
         </Box>
-        <Link target="_blank" href={url} sx={{ pr: 4 }}>
+        <HeadingWrapper target="_blank" href={url} sx={{ pr: 4 }}>
           <Heading
             as="h1"
             variant="headline"
@@ -163,7 +164,7 @@ export default ({ actions, id, inModal = false }) => {
           >
             {theme.name}
           </Badge>
-        </Link>
+        </HeadingWrapper>
       </Box>
       <Box
         as="section"
