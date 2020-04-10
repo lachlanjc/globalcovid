@@ -43,7 +43,7 @@ const HackClub = () => (
         </Link>{' '}
         is a global nonprofit network of high school makers & student-led coding
         clubs where young people build the agency, the network, & the technical
-        talent to think big & do big things in the world. Founded in 2015 by a
+        talent to think big & do big things in the world. Founded in 2014 by a
         16-year-old, Hack&nbsp;Clubs are now in nearly 400 high schools.
       </Text>
     </Container>
