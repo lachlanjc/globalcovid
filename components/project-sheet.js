@@ -31,14 +31,19 @@ const HackClub = () => (
     <Flag sx={{ position: ['relative', null, 'absolute'], top: [-3, -4, 0] }} />
     <Container variant="copy">
       <Heading variant="subtitle" sx={{ color: 'inherit', mt: 0 }}>
-        By a <Link href="https://hackclub.com/">Hack Club</Link>{' '}
+        By a{' '}
+        <Link href="https://hackclub.com/" target="_blank">
+          Hack Club
+        </Link>{' '}
         high&nbsp;schooler.
       </Heading>
       <Text sx={{ fontSize: 2, mt: 2 }}>
-        <Link href="https://hackclub.com/">Hack&nbsp;Club</Link> is a global
-        nonprofit network of high school makers & student-led coding clubs where
-        young people build the agency, the network, & the technical talent to
-        think big & do big things in the world. Founded in 2015 by a
+        <Link href="https://hackclub.com/" target="_blank">
+          Hack&nbsp;Club
+        </Link>{' '}
+        is a global nonprofit network of high school makers & student-led coding
+        clubs where young people build the agency, the network, & the technical
+        talent to think big & do big things in the world. Founded in 2015 by a
         16-year-old, Hack&nbsp;Clubs are now in nearly 400 high schools.
       </Text>
     </Container>
