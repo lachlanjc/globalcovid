@@ -5,13 +5,13 @@ import CTA from '../components/cta'
 import ProjectsCopy from '../components/projects.mdx'
 import Themes from '../components/themes'
 import ProjectsGrid from '../components/projects-grid'
-import Contributors from '../components/contributors'
+// import Contributors from '../components/contributors'
 
-export default ({ titles = [], projects = [] }) => (
+export default ({ projects = [] }) => (
   <>
     <Banner />
-    <Contributors titles={titles} />
-    <Box as="section" sx={{ bg: 'sheet', pt: [5, 6], pb: [4, 5] }}>
+    {/* <Contributors titles={titles} /> */}
+    <Box as="section" sx={{ bg: 'sheet', py: [4, 5] }}>
       <Container
         sx={{
           position: 'relative',
@@ -45,16 +45,8 @@ export default ({ titles = [], projects = [] }) => (
 )
 
 export const getStaticProps = async () => {
-  const {
-    uniq,
-    random,
-    flatten,
-    filter,
-    shuffle,
-    includes,
-    take,
-    trim
-  } = require('lodash')
+  /*
+  const { uniq, random, flatten, filter, shuffle, includes, take, trim } = require('lodash')
   const emoji = require('country-emoji')
   const loadJSON = require('load-json-file')
   // Only content version has creator names
@@ -74,6 +66,7 @@ export const getStaticProps = async () => {
   })
   titles = uniq(flatten(titles))
   titles = [take(shuffle(titles), 64), take(shuffle(titles), 64)]
+  */
   // Getting min bundle for sending as props
   const { getProjectCards } = require('../lib/projects')
   let projects = await getProjectCards()

@@ -22,7 +22,7 @@ export default () => (
         ':focus,:hover': { color: 'accent' }
       }}
     />
-    <Container as="article" sx={{ pt: [4, 5] }}>
+    <Container as="article" sx={{ pt: [4, 5], pb: [3, 4] }}>
       <Badge variant="header" sx={{ mt: [3, 0, -3] }}>
         Mar 26–30, 2020
       </Badge>
