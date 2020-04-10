@@ -1,4 +1,5 @@
 import { Box, Card, Container, Heading } from 'theme-ui'
+import Meta from '../../components/meta'
 import ProjectSheet from '../../components/project-sheet'
 import CTA from '../../components/cta'
 import Themes from '../../components/themes'
@@ -6,6 +7,11 @@ import { map, find } from 'lodash'
 
 export default ({ project = {} }) => (
   <Box as="main" sx={{ bg: 'sunken', py: [3, 4] }}>
+    <Meta
+      title={`${project.name} – COVID-19 Global Hackathon`}
+      description={project.desc}
+      url={`https://covidglobalhackathon.com/projects/${project.id}`}
+    />
     <Container
       sx={{
         maxWidth: [null, 'copyPlus', 'copyUltra'],
