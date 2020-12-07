@@ -3,7 +3,7 @@ import ProjectsCopy from '../../components/projects.mdx'
 import ProjectsGrid from '../../components/projects-grid'
 import Themes from '../../components/themes'
 
-export default ({ projects = [] }) => (
+const ProjectsPage = ({ projects = [] }) => (
   <>
     <Box as="header" variant="headerLeft">
       <Container>
@@ -17,6 +17,8 @@ export default ({ projects = [] }) => (
     </Container>
   </>
 )
+
+export default ProjectsPage
 
 export const getStaticProps = async () => {
   const { getProjectCards } = require('../../lib/projects')

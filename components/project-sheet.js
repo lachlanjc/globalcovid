@@ -50,7 +50,7 @@ const HackClub = () => (
   </Box>
 )
 
-export default ({ actions, id, inModal = false }) => {
+const ProjectSheet = ({ actions, id, inModal = false }) => {
   const {
     theme: themeName,
     video,
@@ -259,3 +259,5 @@ export default ({ actions, id, inModal = false }) => {
     </Box>
   )
 }
+
+export default ProjectSheet

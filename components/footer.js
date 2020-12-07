@@ -2,7 +2,7 @@ import { Box, Container } from 'theme-ui'
 import Flag from './flag'
 import Content from './footer.mdx'
 
-export default () => (
+const Footer = () => (
   <Box
     as="footer"
     sx={{
@@ -35,3 +35,5 @@ export default () => (
     </Container>
   </Box>
 )
+
+export default Footer

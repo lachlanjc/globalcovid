@@ -2,7 +2,7 @@ import { Flex, Button, useColorMode } from 'theme-ui'
 import Link from 'next/link'
 import { isEmpty, reverse } from 'lodash'
 
-export default ({ primary = [], secondary = {}, sx = {} }) => {
+const CTA = ({ primary = [], secondary = {}, sx = {} }) => {
   const [colorMode] = useColorMode()
   let colors = ['blue', 'cyan']
   if (colorMode === 'dark') colors = reverse(colors)
@@ -45,3 +45,5 @@ export default ({ primary = [], secondary = {}, sx = {} }) => {
     </Flex>
   )
 }
+
+export default CTA

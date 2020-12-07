@@ -10,7 +10,7 @@ const backwards = keyframes({
   to: { transform: 'translateX(0)' }
 })
 
-export default props => (
+const Marquee = props => (
   <Box
     as="p"
     sx={{
@@ -35,3 +35,5 @@ export default props => (
     {...props}
   />
 )
+
+export default Marquee

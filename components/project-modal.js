@@ -8,7 +8,7 @@ Modal.setAppElement('#__next')
 
 const ProjectSheet = dynamic(() => import('./project-sheet'))
 
-export default ({ open, onClose, ...props }) => [
+const ProjectModal = ({ open, onClose, ...props }) => [
   <Modal
     key="modal"
     isOpen={open}
@@ -82,3 +82,5 @@ export default ({ open, onClose, ...props }) => [
     }
   `}</style>
 ]
+
+export default ProjectModal

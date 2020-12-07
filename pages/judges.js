@@ -1,7 +1,6 @@
 import { Box, Container } from 'theme-ui'
-import fetch from 'isomorphic-unfetch'
 
-export default ({ judges }) => (
+const JudgesPage = ({ judges }) => (
   <>
     <Box as="header" variant="headerLeft">
       <Container>
@@ -21,6 +20,8 @@ export default ({ judges }) => (
     </Container>
   </>
 )
+
+export default JudgesPage
 
 export const getStaticProps = async () => {
   const judges = await fetch(

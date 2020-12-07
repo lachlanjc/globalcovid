@@ -13,7 +13,7 @@ const list = {
   Salesforce: false
 }
 
-export default ({ wide = false }) => {
+const Sponsors = ({ wide = false }) => {
   const [colorMode] = useColorMode()
   return (
     <Grid
@@ -36,9 +36,8 @@ export default ({ wide = false }) => {
           sx={{ lineHeight: 0, width: '100%', maxWidth: '100%' }}
         >
           <Image
-            src={`/sponsors/${name.toLowerCase()}${
-              list[name] && colorMode === 'dark' ? '-white' : ''
-            }.svg`}
+            src={`/sponsors/${name.toLowerCase()}${list[name] && colorMode === 'dark' ? '-white' : ''
+              }.svg`}
             alt={`${name} logo`}
             sx={{ height: '100%', maxWidth: '75%', maxHeight: wide ? 48 : 64 }}
             loading="lazy"
@@ -48,3 +47,5 @@ export default ({ wide = false }) => {
     </Grid>
   )
 }
+
+export default Sponsors

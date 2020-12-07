@@ -9,7 +9,7 @@ import Sponsors from '../components/landing/sponsors'
 import Prizes from '../components/landing/prizes.mdx'
 import Requirements from '../components/landing/requirements.mdx'
 
-export default () => (
+const LandingPage = () => (
   <>
     <Box as="header" sx={{ bg: 'sheet', mb: [4, 5] }}>
       <Container sx={{ py: [4, 5] }}>
@@ -91,3 +91,5 @@ export default () => (
     </Container>
   </>
 )
+
+export default LandingPage

@@ -1,7 +1,7 @@
 import { Box, Badge, Container, Heading, Text } from 'theme-ui'
 import { ColorSwitcher } from './nav'
 
-export default () => (
+const Banner = () => (
   <Box
     as="header"
     sx={{
@@ -97,3 +97,5 @@ export default () => (
     </Container>
   </Box>
 )
+
+export default Banner

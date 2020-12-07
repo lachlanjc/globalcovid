@@ -1,6 +1,6 @@
 import { Link, Image } from 'theme-ui'
 
-export default ({ sx }) => (
+const Flag = ({ sx }) => (
   <Link
     href="https://hackclub.com/"
     target="_blank"
@@ -16,3 +16,5 @@ export default ({ sx }) => (
     <Image src="/hackclub-flag.svg" alt="Dinosaur holding Hack Club flag" />
   </Link>
 )
+
+export default Flag

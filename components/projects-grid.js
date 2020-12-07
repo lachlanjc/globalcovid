@@ -2,7 +2,7 @@ import { Box } from 'theme-ui'
 import { Fade } from 'react-reveal'
 import ProjectCard from './project-card'
 
-export default ({ projects = [] }) => (
+const ProjectsGrid = ({ projects = [] }) => (
   <Box
     as="article"
     sx={{
@@ -19,3 +19,5 @@ export default ({ projects = [] }) => (
     ))}
   </Box>
 )
+
+export default ProjectsGrid

@@ -5,7 +5,7 @@ import CTA from '../../components/cta'
 import Themes from '../../components/themes'
 import { map, find } from 'lodash'
 
-export default ({ project = {} }) => (
+const ProjectPage = ({ project = {} }) => (
   <Box as="main" sx={{ bg: 'sunken', py: [3, 4] }}>
     <Meta
       title={`${project.name} – COVID-19 Global Hackathon`}
@@ -40,6 +40,8 @@ export default ({ project = {} }) => (
     </Container>
   </Box>
 )
+
+export default ProjectPage
 
 export const getStaticPaths = async () => {
   const loadJSON = require('load-json-file')

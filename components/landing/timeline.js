@@ -1,7 +1,7 @@
 import { Flex, Box, Text } from 'theme-ui'
 import styled from '@emotion/styled'
 
-const Timeline = styled(Flex)`
+const Base = styled(Flex)`
   flex-direction: column;
   line-height: 1.125;
   position: relative;
@@ -34,8 +34,8 @@ const Step = ({ name, duration, first = false, color = 'primary' }) => (
   </Flex>
 )
 
-export default () => (
-  <Timeline
+const Timeline = () => (
+  <Base
     sx={{
       ':before': {
         backgroundImage: theme => `linear-gradient(
@@ -72,5 +72,7 @@ export default () => (
       duration="4/3"
       color="green"
     />
-  </Timeline>
+  </Base>
 )
+
+export default Timeline

@@ -2,7 +2,7 @@ import Grouping from '../../components/grouping'
 import { getThemesSlugs, getThemeBySlug } from '../../lib/themes'
 import { filter } from 'lodash'
 
-export default ({ theme, projects = [] }) => (
+const ThemePage = ({ theme, projects = [] }) => (
   <Grouping
     color={theme.color}
     title={theme.name}
@@ -10,6 +10,8 @@ export default ({ theme, projects = [] }) => (
     projects={projects}
   />
 )
+
+export default ThemePage
 
 export const getStaticPaths = async () => {
   const paths = getThemesSlugs().map(id => ({ params: { id } }))

@@ -7,7 +7,7 @@ import Themes from '../components/themes'
 import ProjectsGrid from '../components/projects-grid'
 // import Contributors from '../components/contributors'
 
-export default ({ projects = [] }) => (
+const HomePage = ({ projects = [] }) => (
   <>
     <Banner />
     {/* <Contributors titles={titles} /> */}
@@ -43,6 +43,8 @@ export default ({ projects = [] }) => (
     </Container>
   </>
 )
+
+export default HomePage
 
 export const getStaticProps = async () => {
   /*

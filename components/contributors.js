@@ -1,7 +1,7 @@
 import { Badge, Box } from 'theme-ui'
 import Marquee from './marquee'
 
-export default ({ titles = [] }) => (
+const Contributors = ({ titles = [] }) => (
   <Box
     as="section"
     aria-hidden
@@ -43,3 +43,5 @@ export default ({ titles = [] }) => (
     </Box>
   </Box>
 )
+
+export default Contributors

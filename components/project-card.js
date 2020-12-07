@@ -5,9 +5,9 @@ import ProjectModal from './project-modal'
 import { flag } from 'country-emoji'
 import { getThemeColor } from '../lib/themes'
 
-export default props => {
   // const router = useRouter()
   // const [initialPath] = useState(router.pathname)
+const ProjectCard = props => {
   const [open, setOpen] = useState(false)
   const { id, theme, country, name, desc } = props
   const closeModal = () => {
@@ -66,3 +66,5 @@ export default props => {
     </Card>
   )
 }
+
+export default ProjectCard

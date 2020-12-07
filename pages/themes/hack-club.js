@@ -3,7 +3,7 @@ import Grouping from '../../components/grouping'
 
 const color = '#ec3750'
 
-export default ({ projects = [] }) => (
+const HackClubPage = ({ projects = [] }) => (
   <Grouping
     badge="Made by"
     color={color}
@@ -24,6 +24,8 @@ export default ({ projects = [] }) => (
     projects={projects}
   />
 )
+
+export default HackClubPage
 
 export const getStaticProps = async () => {
   const { filter } = require('lodash')
