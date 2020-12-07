@@ -4,7 +4,7 @@ import Link from 'next/link'
 import themes from '../lib/themes'
 import { kebabCase } from 'lodash'
 
-export default ({ minimal = false, ...props }) => {
+const Themes = ({ minimal = false, ...props }) => {
   const { pathname, query } = useRouter()
   const active = pathname.startsWith('/themes/') ? query.id : false
   const { theme } = useThemeUI()
@@ -74,3 +74,5 @@ export default ({ minimal = false, ...props }) => {
     </Grid>
   ]
 }
+
+export default Themes
