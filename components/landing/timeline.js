@@ -29,7 +29,7 @@ const Step = ({ name, duration, first = false, color = 'primary' }) => (
     <Box sx={{ p: 2, borderRadius: 'circle', bg: color, mr: [3, 4] }} />
     <Box>
       <Text sx={{ color: 'muted', fontSize: 1, mb: 1 }} children={duration} />
-      <Text sx={{ color: 'text', fontSize: [2, 3] }} children={name} />
+      <Text as="p" sx={{ color: 'text', fontSize: [2, 3] }} children={name} />
     </Box>
   </Flex>
 )
